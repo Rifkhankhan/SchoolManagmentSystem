@@ -1,0 +1,19 @@
+<nav
+  class="navbar"
+  style="width: 82%; margin: auto"
+>
+  <div class="container-fluid">
+    <ul>
+      <li routerLink="/home">Home</li>
+      <li routerLink="/profile">Profile</li>
+      <li routerLink="/profile/change">Reset Password</li>
+    </ul>
+
+    <div class="logoutdiv" (click)='logout()'>
+      LOGOUT
+    </div>
+  </div>
+</nav>
+
+
+<app-sidebar class="sidebar"></app-sidebar>
