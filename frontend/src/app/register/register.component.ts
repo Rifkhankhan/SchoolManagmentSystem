@@ -1,5 +1,5 @@
+import { AuthService } from './../Services/auth.service';
 import { Router } from '@angular/router';
-import { AuthService } from './../Service/auth.service';
 import { NgForm } from '@angular/forms';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';

@@ -1,3 +1,5 @@
+import { RegisterComponent } from './register/register.component';
+import { LoginComponent } from './login/login.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -5,38 +7,43 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { StaffComponent } from './staff/staff.component';
 import { StudentComponent } from './student/student.component';
-import { TeacherComponent } from './Staff/teacher/teacher.component';
-import { ManagementComponent } from './Staff/management/management.component';
-import { AuthComponent } from './auth/auth.component';
-import { SidebarComponent } from './Components/sidebar/sidebar.component';
-import { FooterComponent } from './Components/footer/footer.component';
-import { StudentMenuComponent } from './Components/student-menu/student-menu.component';
-import { TeacherMenubarComponent } from './Components/teacher-menubar/teacher-menubar.component';
-import { ManagementMenubarComponent } from './Components/management-menubar/management-menubar.component';
-import { MenubarComponent } from './Components/menubar/menubar.component';
-import { HomeComponent } from './Components/home/home.component';
+import { TeacherComponent } from './staff/teacher/teacher.component';
+import { ManagementComponent } from './staff/management/management.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
+import { HomeComponent } from './home/home.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { LayoutComponent } from "./layout/layout.component";
+import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 
+
+import { ChangePasswordComponent } from './profile/change-password/change-password.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 @NgModule({
-  declarations: [
-    AppComponent,
-    StaffComponent,
-    StudentComponent,
-    TeacherComponent,
-    ManagementComponent,
-    AuthComponent,
-    SidebarComponent,
-    FooterComponent,
-    StudentMenuComponent,
-    TeacherMenubarComponent,
-    ManagementMenubarComponent,
-    MenubarComponent,
-    HomeComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        StaffComponent,
+        StudentComponent,
+        TeacherComponent,
+        ManagementComponent,
+        RegisterComponent,
+        LoginComponent,
+        SidebarComponent,
+        HomeComponent,
+        LayoutComponent,
+        ChangePasswordComponent
+    ],
+    providers: [],
+    bootstrap: [AppComponent],
+    imports: [
+      CommonModule,
+      BrowserModule,
+      AppRoutingModule,
+      FormsModule,
+      ReactiveFormsModule,
+      HttpClientModule,
+      BrowserAnimationsModule,
+
+    ]
 })
 export class AppModule { }
