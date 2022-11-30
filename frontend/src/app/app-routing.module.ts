@@ -1,3 +1,6 @@
+import { StaffComponent } from './staff/staff.component';
+import { StudentComponent } from './student/student.component';
+import { TeacherComponent } from './staff/teacher/teacher.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './auth.guard';
@@ -26,7 +29,27 @@ const routes: Routes = [
 				path: '',
 				component: HomeComponent,
 				// canActivate: [AuthGuard]
-			}
+			},
+      {
+        path:'teachers',
+        component:TeacherComponent
+      },
+      {
+        path:'students',
+        component:StudentComponent
+      },
+      {
+        path:'exams',
+        component:StudentComponent
+      },
+      {
+        path:'staffs',
+        component:StaffComponent
+      },
+      {
+        path:'profile',
+        component:ProfileComponent
+      }
 		],
 		// canActivate: [AuthGuard]
 	},

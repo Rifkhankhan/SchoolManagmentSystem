@@ -1,11 +1,50 @@
-<nav style="width: 20%; margin: auto" class="sidebar">
+<nav class="sidebar">
   <div class="container-fluid">
     <ul>
-      <li routerLink="/home">Dashboard</li>
-      <li routerLink="/profile">Profile</li>
-      <li routerLink="/profile/change">Reset Password</li>
-      <li (click)="logout()" >LOGOUT</li>
+      <li class="heading">
+        <span>Hidaya School</span>
+        <img src="../../assets/images/paragraph .png" alt="" srcset="" />
+      </li>
+      <li class="search-list">
+        <img class="search-icon" src="../../assets/images/loupe.png" alt="" srcset="" />
+        <input class="search" type="search" name="" id="" placeholder="Search">
+      </li>
+      <li routerLink="/home">
+        <img src="../../assets/images/dashboard.png" alt="" srcset="" />
+        <span>Dashboard</span>
+      </li>
+      <li routerLink="/home/teachers">
+        <img src="../../assets/images/teacher.png" alt="" srcset="" />
+        <span>Teacher</span>
+      </li>
+      <li routerLink="/home/students">
+        <img
+          src="../../assets/images/graduating-student.png"
+          alt=""
+          srcset=""
+        />
+        <span>Students</span>
+      </li>
+      <li routerLink="/home/staffs">
+        <img src="../../assets/images/worker.png" alt="" srcset="" />
+        <span>Staffs</span>
+      </li>
+      <li routerLink="/home/exams">
+        <img src="../../assets/images/exam.png" alt="" srcset="" />
+        <span>Exams</span>
+      </li>
+      <li routerLink="/home/profile">
+        <img src="../../assets/images/user.png" alt="" srcset="" />
+        <span>Profile</span>
+      </li>
+      <li routerLink="/profile/change">
+        <img src="../../assets/images/password.png" alt="" srcset="" />
+        <span>Reset Password</span>
+      </li>
+      <li (click)="logout()">
+        <img src="../../assets/images/logout.png" alt="" srcset="" />
+        <span>LOGOUT</span>
+      </li>
     </ul>
-
   </div>
 </nav>

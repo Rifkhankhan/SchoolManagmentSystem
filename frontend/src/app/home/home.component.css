@@ -1,16 +1,15 @@
-
+/*
 .container
 {
-  /* margin-top: 5.5rem !important; */
   position: relative;
-  width: 80% !important;
-  box-shadow: 0 1px 10px black;
+  width: 84% !important;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   min-width:80%;
-  background-image: linear-gradient(to right bottom ,rgb(126, 175, 232),rgb(241, 92, 92),rgb(243, 157, 53));
+  background-color: rgba(96, 7, 108, 0.567);
+  color: black;
 }
 
 .card{
@@ -70,7 +69,6 @@
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
-  /* margin: 1rem; */
 
 }
 
@@ -120,11 +118,109 @@
 .comments-box{
   width: 100%;
   margin: 0%;
-  /* padding: .5rem; */
 }
 .comment{
   margin-bottom: 0.5rem;
   background-color: aqua !important;
   padding: 10px;
   text-align: center;
+} */
+
+*{
+  padding: 0px;
+  margin: 0%;
+  box-sizing: border-box;
 }
+
+.container{
+  background-color: rgba(0, 255, 255, 0.184);
+  width: 84% !important;
+  min-width: 70%;
+  min-height: 700px;
+
+  float: right;
+
+}
+
+.box-container{
+  padding: 1rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap !important;
+  justify-content: space-between;
+  background-color: white;
+  align-items: center;
+  margin: 1rem;
+  border-radius: 5px ;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.253);
+  min-height: 200px;
+}
+.container-image{
+  display: block;
+  /* padding: 1rem; */
+  overflow: hidden;
+  margin: 1rem;
+  border-radius: 5px ;
+
+  background-image: url('../../assets/images/istockphoto-1401278271-1024x1024.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 300px;
+  background-color: white;
+}
+
+.container-image .text-box{
+  float: right;
+  width: 40%;
+
+  background-color: rgb(6, 18, 77);
+  height:300px;
+  clip-path:polygon(0 0,100% 0,100% 100%,60% 100%) ; /* x y  x y*/
+}
+
+.container-image .text-box h3{
+  color: white;
+ display: flex;
+ justify-content: center;
+ margin-top: 25%;
+ margin-left: 35%;
+ font-size: 50px;
+}
+
+
+
+.box-container .box{
+  width: 23%;
+  height: 150px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size:25px;
+  color: white;
+  transition: all .5s;
+}
+
+.box:hover{
+  transform: scale(1.1);
+  box-shadow: 0 1px 10px black;
+}
+
+.box-container  .box-1{
+  background-color: blueviolet  !important;
+}
+
+.box-container  .box-2{
+  background-color: rgb(71, 176, 22)  !important;
+}
+
+.box-container  .box-3{
+  background-color: rgb(176, 84, 22)  !important;
+}
+
+.box-container  .box-4{
+  background-color: rgb(163, 20, 154)  !important;
+}
+
