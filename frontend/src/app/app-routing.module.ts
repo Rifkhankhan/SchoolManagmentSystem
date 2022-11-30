@@ -1,6 +1,6 @@
 import { StaffComponent } from './staff/staff.component';
 import { StudentComponent } from './student/student.component';
-import { TeacherComponent } from './staff/teacher/teacher.component';
+import { TeacherComponent } from './teacher/teacher.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './auth.guard';
@@ -13,7 +13,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { RegisterComponent } from './register/register.component';
 
 const routes: Routes = [
-  {
+	{
 		path: '',
 		redirectTo: 'home',
 		pathMatch: 'full'
@@ -27,30 +27,30 @@ const routes: Routes = [
 		children: [
 			{
 				path: '',
-				component: HomeComponent,
+				component: HomeComponent
 				// canActivate: [AuthGuard]
 			},
-      {
-        path:'teachers',
-        component:TeacherComponent
-      },
-      {
-        path:'students',
-        component:StudentComponent
-      },
-      {
-        path:'exams',
-        component:StudentComponent
-      },
-      {
-        path:'staffs',
-        component:StaffComponent
-      },
-      {
-        path:'profile',
-        component:ProfileComponent
-      }
-		],
+			{
+				path: 'teachers',
+				component: TeacherComponent
+			},
+			{
+				path: 'students',
+				component: StudentComponent
+			},
+			{
+				path: 'exams',
+				component: StudentComponent
+			},
+			{
+				path: 'staffs',
+				component: StaffComponent
+			},
+			{
+				path: 'profile',
+				component: ProfileComponent
+			}
+		]
 		// canActivate: [AuthGuard]
 	},
 	{
@@ -65,22 +65,22 @@ const routes: Routes = [
 				children: [
 					{
 						path: '',
-						component: ProfileComponent,
+						component: ProfileComponent
 						// canActivate: [AuthGuard]
 					},
 					{
 						path: 'edit',
-						component: EditComponent,
+						component: EditComponent
 						// canActivate: [AuthGuard]
 					},
 					{
 						path: 'change',
-						component: ChangePasswordComponent,
+						component: ChangePasswordComponent
 						// canActivate: [AuthGuard]
 					}
 				]
 			}
-		],
+		]
 		// canActivate: [AuthGuard]
 	},
 
@@ -92,7 +92,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+	imports: [RouterModule.forRoot(routes)],
+	exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

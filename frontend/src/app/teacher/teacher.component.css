@@ -1,0 +1,146 @@
+*{
+  padding: 0px;
+  margin: 0%;
+  box-sizing: border-box;
+}
+
+.container{
+  background-color: rgba(0, 255, 255, 0.184);
+  width: 84% !important;
+  min-width: 70%;
+  min-height: 700px;
+
+  float: right;
+
+}
+
+
+.container-image{
+  display: block;
+  /* padding: 1rem; */
+  overflow: hidden;
+  margin: .5rem;
+  border-radius: 5px ;
+
+  background-image: url('../../assets/images/teachers.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 300px;
+  background-color: white;
+}
+
+.container-image .text-box{
+  float: right;
+  width: 40%;
+
+  background-color: rgb(6, 18, 77);
+  height:300px;
+  clip-path:polygon(0 0,100% 0,100% 100%,60% 100%) ; /* x y  x y*/
+}
+
+.container-image .text-box h3{
+  color: white;
+ display: flex;
+ justify-content: center;
+ margin-top: 25%;
+ margin-left: 35%;
+ font-size: 50px;
+}
+
+.box-container{
+  width: 100%;
+  margin-top: 3rem !important;
+  margin-inline: 0%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  min-height: 200px;
+}
+
+.box-container .box{
+  width: 24%;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size:20px;
+  color: white;
+  transition: all .5s;
+  position: relative;
+}
+
+.box-container .box .top-circle-1{
+  position: absolute;
+  top: -35% !important;
+
+  border-radius: 100px;
+  background-color: blueviolet ;
+  width: 100px;
+  height: 100px;
+  border: 2px solid white;
+}
+.box-container .box .circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.box-container .box .circle img{
+  width: 50px;
+  height: 50px;
+}
+
+.box-container .box .top-circle-2{
+  position: absolute;
+  top: -35% !important;
+
+  border-radius: 100px;
+  background-color: rgb(71, 176, 22)  ;
+  width: 100px;
+  height: 100px;
+  border: 2px solid white;
+}
+
+.box-container .box .top-circle-3{
+  position: absolute;
+  top: -35% !important;
+
+  border-radius: 100px;
+  background-color: rgb(176, 84, 22)  ;
+  width: 100px;
+  height: 100px;
+  border: 2px solid white;
+}
+.box-container .box .top-circle-4{
+  position: absolute;
+  top: -35% !important;
+
+  border-radius: 100px;
+  background-color:  rgb(163, 20, 154)    ;
+  width: 100px;
+  height: 100px;
+  border: 2px solid white;
+}
+.box:hover{
+  transform: scale(1.01);
+  box-shadow: 0 1px 10px black;
+}
+
+.box-container  .box-1{
+  background-color: blueviolet  !important;
+}
+
+.box-container  .box-2{
+  background-color: rgb(71, 176, 22)  !important;
+}
+
+.box-container  .box-3{
+  background-color: rgb(176, 84, 22)  !important;
+}
+
+.box-container  .box-4{
+  background-color: rgb(163, 20, 154)  !important;
+}
+

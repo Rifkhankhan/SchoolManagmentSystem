@@ -139,25 +139,26 @@
   min-height: 700px;
 
   float: right;
-
 }
 
 .box-container{
   padding: 1rem;
   display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap !important;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: start;
   background-color: white;
-  align-items: center;
   margin: 1rem;
   border-radius: 5px ;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.253);
+  box-shadow: 0 10px 20px rgba(42, 24, 24, 0.592);
   min-height: 200px;
+}
+.box-container .box{
+  margin-left: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 .container-image{
   display: block;
-  /* padding: 1rem; */
   overflow: hidden;
   margin: 1rem;
   border-radius: 5px ;
@@ -191,7 +192,7 @@
 
 
 .box-container .box{
-  width: 23%;
+  width: 24%;
   height: 150px;
 
   display: flex;
@@ -204,7 +205,7 @@
 }
 
 .box:hover{
-  transform: scale(1.1);
+  transform: scale(1.02);
   box-shadow: 0 1px 10px black;
 }
 

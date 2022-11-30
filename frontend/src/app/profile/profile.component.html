@@ -1,40 +1,46 @@
+<!-- <app-layout></app-layout> -->
 
-
-
-<div class="container" *ngIf="isLoading"></div>
-<div class="container"  *ngIf="!isLoading">
-  <div class="card">
-    <div class="side1 detail-box">
-        <div class=" detail name-box">
-          <label for="name">Name : <span>{{userData.name}}</span></label>
-        </div>
-
-        <div class="detail name-box">
-          <label for="name">Mobile : <span>{{userData.mobile}}</span></label>
-        </div>
-
-        <div class="detail name-box">
-          <label for="name">Genter : <span>{{userData.genter}}</span></label>
-        </div>
-
-
-        <div class="detail name-box">
-          <label for="name">Email : <span>{{userData.email}}</span></label>
-        </div>
-
-        <div class="detail name-box">
-          <label for="name">Location : <span>{{userData.location}}</span></label>
-        </div>
+<div class="container">
+  <div class="container-image">
+    <div class="text-box">
+      <h3>STUDENTS</h3>
     </div>
-
-
-    <div class=" side2 img-box">
-      <img [src]="userData.image" alt="" *ngIf="userData.image">
-      <img src="../../assets/images/bg_1.jpg" alt="" *ngIf="!userData.image">
+  </div>
+  <div class="box-container">
+    <div class="box box-1">
+      <h3>Students</h3>
+      <span>50</span>
+    </div>
+    <div class="box box-2">
+      <h3>Teachers</h3>
+      <span>150</span>
+    </div>
+    <div class="box box-3">
+      <h3>Staffs</h3>
+      <span>30</span>
+    </div>
+    <div class="box box-4">
+      <h3>Exams</h3>
+      <span>20</span>
     </div>
   </div>
 
-  <div class="button" >
-    <p>Edit Profile</p>
+  <div class="box-container">
+    <div class="box box-1">
+      <h3>Students</h3>
+      <span>50</span>
+    </div>
+    <div class="box box-2">
+      <h3>Teachers</h3>
+      <span>150</span>
+    </div>
+    <div class="box box-3">
+      <h3>Staffs</h3>
+      <span>30</span>
+    </div>
+    <div class="box box-4">
+      <h3>Exams</h3>
+      <span>20</span>
+    </div>
   </div>
 </div>

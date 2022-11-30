@@ -1,0 +1,98 @@
+*{
+  padding: 0px;
+  margin: 0%;
+  box-sizing: border-box;
+}
+
+.container{
+  background-color: rgba(0, 255, 255, 0.184);
+  width: 84% !important;
+  min-width: 70%;
+  min-height: 700px;
+
+  float: right;
+
+}
+
+.box-container{
+  padding: 1rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap !important;
+  justify-content: space-between;
+  background-color: white;
+  align-items: center;
+  margin: 1rem;
+  border-radius: 5px ;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.253);
+  min-height: 200px;
+}
+.container-image{
+  display: block;
+  /* padding: 1rem; */
+  overflow: hidden;
+  margin: 1rem;
+  border-radius: 5px ;
+
+  background-image: url('../../assets/images/students.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 300px;
+  background-color: white;
+}
+
+.container-image .text-box{
+  float: right;
+  width: 40%;
+
+  background-color: rgb(6, 18, 77);
+  height:300px;
+  clip-path:polygon(0 0,100% 0,100% 100%,60% 100%) ; /* x y  x y*/
+}
+
+.container-image .text-box h3{
+  color: white;
+ display: flex;
+ justify-content: center;
+ margin-top: 25%;
+ margin-left: 35%;
+ font-size: 50px;
+}
+
+
+
+.box-container .box{
+  width: 24%;
+  height: 150px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size:25px;
+  color: white;
+  transition: all .5s;
+}
+
+.box:hover{
+  transform: scale(1.05);
+  box-shadow: 0 1px 10px black;
+}
+
+.box-container  .box-1{
+  background-color: blueviolet  !important;
+}
+
+.box-container  .box-2{
+  background-color: rgb(71, 176, 22)  !important;
+}
+
+.box-container  .box-3{
+  background-color: rgb(176, 84, 22)  !important;
+}
+
+.box-container  .box-4{
+  background-color: rgb(163, 20, 154)  !important;
+}
+
