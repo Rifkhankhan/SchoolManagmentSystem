@@ -1,3 +1,4 @@
+import { TeacherSectionComponent } from './teacher-section/teacher-section.component';
 import { StaffComponent } from './staff/staff.component';
 import { StudentComponent } from './student/student.component';
 import { TeacherComponent } from './teacher/teacher.component';
@@ -83,6 +84,15 @@ const routes: Routes = [
 		]
 		// canActivate: [AuthGuard]
 	},
+  {
+    path:'teacher',
+    children:[
+      {
+        path:'',
+        component:TeacherSectionComponent
+      }
+    ]
+  },
 
 	{
 		path: '**',

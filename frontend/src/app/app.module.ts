@@ -17,6 +17,9 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { ChangePasswordComponent } from './profile/change-password/change-password.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { StudentSectionComponent } from './student-section/student-section.component';
+import { TeacherSectionComponent } from './teacher-section/teacher-section.component';
+import { StaffSectionComponent } from './staff-section/staff-section.component';
 @NgModule({
 	declarations: [
 		AppComponent,
@@ -28,7 +31,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 		HomeComponent,
 		LayoutComponent,
 		ChangePasswordComponent,
-    StaffComponent
+    StaffComponent,
+    StudentSectionComponent,
+    TeacherSectionComponent,
+    StaffSectionComponent
 	],
 	providers: [],
 	bootstrap: [AppComponent],
