@@ -1,3 +1,4 @@
+import { PostService } from './../../Services/post.service';
 import { Subscription } from 'rxjs';
 import {
 	Component,
@@ -6,7 +7,6 @@ import {
 
   ChangeDetectionStrategy
 } from '@angular/core';
-import { PostService } from '../Services/post.service';
 
 @Component({
 	selector: 'app-home',

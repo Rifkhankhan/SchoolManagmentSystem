@@ -47,10 +47,7 @@ const routes: Routes = [
 				path: 'staffs',
 				component: StaffComponent
 			},
-			{
-				path: 'profile',
-				component: ProfileComponent
-			}
+
 		]
 		// canActivate: [AuthGuard]
 	},
@@ -84,15 +81,84 @@ const routes: Routes = [
 		]
 		// canActivate: [AuthGuard]
 	},
-  {
-    path:'teacher',
-    children:[
-      {
-        path:'',
-        component:TeacherSectionComponent
-      }
-    ]
+	{
+		path: 'teacher',
+    loadChildren: () =>
+    import('./teacher-section/teacher-section.module').then(m => m.TeacherSectionModule),
   },
+	{
+		path: 'student',
+		children: [
+			{
+				path: '',
+				component: StudentComponent
+			},
+			{
+				path: 'teachers',
+				children: [
+					{
+						path: '',
+						component: TeacherComponent
+					},
+					{
+						path: 'teacher/:teacherId',
+						component: StudentComponent
+					}
+				]
+			},
+			{
+				path: 'exams',
+				children: [
+					{
+						path: '',
+						component: StudentComponent
+					},
+					{
+						path: 'exams/:examId',
+						component: StudentComponent
+					}
+				]
+			},
+			{
+				path: 'courses',
+				children: [
+					{
+						path: '',
+						component: StudentComponent
+					},
+					{
+						path: 'courses/:courseId',
+						component: StudentComponent
+					}
+				]
+			},
+			{
+				path: 'profile',
+				children: [
+					{
+						path: '',
+						children: [
+							{
+								path: '',
+								component: ProfileComponent
+								// canActivate: [AuthGuard]
+							},
+							{
+								path: 'edit',
+								component: EditComponent
+								// canActivate: [AuthGuard]
+							},
+							{
+								path: 'change',
+								component: ChangePasswordComponent
+								// canActivate: [AuthGuard]
+							}
+						]
+					}
+				]
+			}
+		]
+	},
 
 	{
 		path: '**',

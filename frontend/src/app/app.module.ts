@@ -1,3 +1,5 @@
+import { TeacherSectionModule } from './teacher-section/teacher-section.module';
+
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { NgModule } from '@angular/core';
@@ -18,8 +20,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { ChangePasswordComponent } from './profile/change-password/change-password.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { StudentSectionComponent } from './student-section/student-section.component';
-import { TeacherSectionComponent } from './teacher-section/teacher-section.component';
 import { StaffSectionComponent } from './staff-section/staff-section.component';
+import { StudentLayoutComponent } from './student-section/student-layout/student-layout.component';
+import { StaffLayoutComponent } from './staff-section/staff-layout/staff-layout.component';
+import { StaffSidebarComponent } from './staff-section/staff-sidebar/staff-sidebar.component';
+import { StudentSidebarComponent } from './student-section/student-sidebar/student-sidebar.component';
 @NgModule({
 	declarations: [
 		AppComponent,
@@ -33,8 +38,11 @@ import { StaffSectionComponent } from './staff-section/staff-section.component';
 		ChangePasswordComponent,
     StaffComponent,
     StudentSectionComponent,
-    TeacherSectionComponent,
-    StaffSectionComponent
+    StaffSectionComponent,
+    StudentLayoutComponent,
+    StaffLayoutComponent,
+    StaffSidebarComponent,
+    StudentSidebarComponent
 	],
 	providers: [],
 	bootstrap: [AppComponent],
@@ -45,7 +53,8 @@ import { StaffSectionComponent } from './staff-section/staff-section.component';
 		FormsModule,
 		ReactiveFormsModule,
 		HttpClientModule,
-		BrowserAnimationsModule
+		BrowserAnimationsModule,
+    TeacherSectionModule,
 	]
 })
 export class AppModule {}
