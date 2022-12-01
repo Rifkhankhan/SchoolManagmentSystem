@@ -88,77 +88,9 @@ const routes: Routes = [
   },
 	{
 		path: 'student',
-		children: [
-			{
-				path: '',
-				component: StudentComponent
-			},
-			{
-				path: 'teachers',
-				children: [
-					{
-						path: '',
-						component: TeacherComponent
-					},
-					{
-						path: 'teacher/:teacherId',
-						component: StudentComponent
-					}
-				]
-			},
-			{
-				path: 'exams',
-				children: [
-					{
-						path: '',
-						component: StudentComponent
-					},
-					{
-						path: 'exams/:examId',
-						component: StudentComponent
-					}
-				]
-			},
-			{
-				path: 'courses',
-				children: [
-					{
-						path: '',
-						component: StudentComponent
-					},
-					{
-						path: 'courses/:courseId',
-						component: StudentComponent
-					}
-				]
-			},
-			{
-				path: 'profile',
-				children: [
-					{
-						path: '',
-						children: [
-							{
-								path: '',
-								component: ProfileComponent
-								// canActivate: [AuthGuard]
-							},
-							{
-								path: 'edit',
-								component: EditComponent
-								// canActivate: [AuthGuard]
-							},
-							{
-								path: 'change',
-								component: ChangePasswordComponent
-								// canActivate: [AuthGuard]
-							}
-						]
-					}
-				]
-			}
-		]
-	},
+    loadChildren: () =>
+    import('./student-section/student-section.module').then(m => m.StudentSectionModule),
+  },
 
 	{
 		path: '**',

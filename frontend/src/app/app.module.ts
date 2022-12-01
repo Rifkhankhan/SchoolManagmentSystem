@@ -19,12 +19,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { ChangePasswordComponent } from './profile/change-password/change-password.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { StudentSectionComponent } from './student-section/student-section.component';
-import { StaffSectionComponent } from './staff-section/staff-section.component';
-import { StudentLayoutComponent } from './student-section/student-layout/student-layout.component';
-import { StaffLayoutComponent } from './staff-section/staff-layout/staff-layout.component';
-import { StaffSidebarComponent } from './staff-section/staff-sidebar/staff-sidebar.component';
-import { StudentSidebarComponent } from './student-section/student-sidebar/student-sidebar.component';
+
 @NgModule({
 	declarations: [
 		AppComponent,
@@ -36,13 +31,8 @@ import { StudentSidebarComponent } from './student-section/student-sidebar/stude
 		HomeComponent,
 		LayoutComponent,
 		ChangePasswordComponent,
-    StaffComponent,
-    StudentSectionComponent,
-    StaffSectionComponent,
-    StudentLayoutComponent,
-    StaffLayoutComponent,
-    StaffSidebarComponent,
-    StudentSidebarComponent
+    StaffComponent
+
 	],
 	providers: [],
 	bootstrap: [AppComponent],
@@ -54,7 +44,7 @@ import { StudentSidebarComponent } from './student-section/student-sidebar/stude
 		ReactiveFormsModule,
 		HttpClientModule,
 		BrowserAnimationsModule,
-    TeacherSectionModule,
+
 	]
 })
 export class AppModule {}

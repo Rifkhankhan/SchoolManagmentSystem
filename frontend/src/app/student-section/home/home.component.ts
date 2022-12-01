@@ -6,7 +6,7 @@ import {
 
   ChangeDetectionStrategy
 } from '@angular/core';
-import { PostService } from '../Services/post.service';
+import { PostService } from 'src/app/Services/post.service';
 
 @Component({
 	selector: 'app-home',

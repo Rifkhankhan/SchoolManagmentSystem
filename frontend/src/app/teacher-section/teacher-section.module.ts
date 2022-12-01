@@ -1,3 +1,6 @@
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { EditComponent } from './profile/edit/edit.component';
+import { ChangePasswordComponent } from './profile/change-password/change-password.component';
 import { HomeComponent } from './home/home.component';
 import { ProfileComponent } from './profile/profile.component';
 import { TeacherComponent } from './teacher/teacher.component';
@@ -10,6 +13,8 @@ import { CommonModule } from '@angular/common';
 import { TeacherSectionRoutingModule } from './teacher-section-routing.module';
 import { TeacherSectionComponent } from './teacher-section.component';
 import { TeacherSidebarComponent } from "./teacher-sidebar/teacher-sidebar.component";
+import { CourseComponent } from './course/course.component';
+import { ExamComponent } from './exam/exam.component';
 
 
 @NgModule({
@@ -21,12 +26,21 @@ import { TeacherSidebarComponent } from "./teacher-sidebar/teacher-sidebar.compo
         StaffComponent,
         TeacherComponent,
         ProfileComponent,
-        HomeComponent
+        HomeComponent,
+        CourseComponent,
+        ExamComponent,
+        ChangePasswordComponent,
+        EditComponent,
+        
 
     ],
     imports: [
         CommonModule,
         TeacherSectionRoutingModule,
+        FormsModule,ReactiveFormsModule
     ]
 })
 export class TeacherSectionModule { }
+
+
+// ng g module teacher-section --routing

@@ -1,1 +1,56 @@
-<p>student-sidebar works!</p>
+<nav class="sidebar">
+  <div class="container-fluid">
+    <ul>
+      <li class="heading">
+        <span>alhikma School</span>
+        <img src="../../assets/images/paragraph .png" alt="" srcset="" />
+      </li>
+      <li class="search-list">
+        <img class="search-icon" src="../../assets/images/loupe.png" alt="" srcset="" />
+        <input class="search" type="search" name="" id="" placeholder="Search">
+      </li>
+      <li routerLink="/student/home">
+        <img src="../../assets/images/dashboard.png" alt="" srcset="" />
+        <span>Dashboard</span>
+      </li>
+      <li routerLink="/student/home/teachers">
+        <img src="../../assets/images/teacher.png" alt="" srcset="" />
+        <span>Payments</span>
+      </li>
+      <li routerLink="/student/home/courses">
+        <img
+          src="../../assets/images/graduating-student.png"
+          alt=""
+          srcset=""
+        />
+        <span>Students</span>
+      </li>
+
+      <li routerLink="/student/home/courses">
+        <img
+          src="../../assets/images/reading-group.png"
+          alt=""
+          srcset=""
+        />
+        <span>Courses </span>
+      </li>
+
+      <li routerLink="/student/home/exams">
+        <img src="../../assets/images/exam.png" alt="" srcset="" />
+        <span>Exams</span>
+      </li>
+      <li routerLink="/student/home/profile">
+        <img src="../../assets/images/user.png" alt="" srcset="" />
+        <span>Profile</span>
+      </li>
+      <li routerLink="/profile/change">
+        <img src="../../assets/images/password.png" alt="" srcset="" />
+        <span>Reset Password</span>
+      </li>
+      <li (click)="logout()">
+        <img src="../../assets/images/logout.png" alt="" srcset="" />
+        <span>LOGOUT</span>
+      </li>
+    </ul>
+  </div>
+</nav>
