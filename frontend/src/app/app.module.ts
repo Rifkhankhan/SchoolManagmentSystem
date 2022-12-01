@@ -19,6 +19,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { ChangePasswordComponent } from './profile/change-password/change-password.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { DetailComponent } from './home/detail/detail.component';
 
 @NgModule({
 	declarations: [
@@ -31,7 +32,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 		HomeComponent,
 		LayoutComponent,
 		ChangePasswordComponent,
-    StaffComponent
+    StaffComponent,
+    DetailComponent
 
 	],
 	providers: [],

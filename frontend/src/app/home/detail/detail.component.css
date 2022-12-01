@@ -1,0 +1,124 @@
+*{
+  padding: 0px;
+  margin: 0%;
+  box-sizing: border-box;
+}
+
+.container{
+  background-color:aqua;
+  width: 84% !important;
+  min-width: 70%;
+  float: right;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.heading h1
+{
+  display: flex;
+  justify-content: flex-start;
+
+  font-size: 30px;
+  margin: 1rem;
+  /* padding: 20px; */
+  color: rgba(0, 0, 0, 0.625);
+  text-transform: uppercase;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.box-container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  height: 100%;
+}
+.box-container .box{
+  margin-bottom: 1.5rem;
+}
+
+.box-container .box{
+  width: 23%;
+  height: 300px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size:25px;
+  transition: all .5s;
+  background-color: white;
+  border-radius: 5px;
+  border: none;
+  position: relative;
+}
+
+.box:hover{
+  box-shadow: 0 1px 10px black;
+}
+
+.box .more-menu{
+  height: 10%;
+  position: absolute;
+  top: 0;
+  left: 85%;
+  width: 20px;
+  height: 20px;
+  float: right;
+  margin-top: .5rem;
+}
+
+.box .profile-image{
+  height: 50%;
+ /* margin-top: -4rem; */
+ margin-bottom: 1rem;
+ padding: 0%;
+  width: 150px;
+  height: 150px;
+  border-radius: 100px;
+  border: none;
+  background-position: center;
+  background-size: cover;
+  transition: all 1s;
+}
+.box:hover .profile-image{
+  transform: scale(1.2);
+}
+.person-name{
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 1rem;
+  letter-spacing: 3px;
+}
+.icons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.icons img{
+  width: 12%;
+  transition: all 1s;
+}
+
+.icons .cell:hover{
+  animation: shake .1s infinite;
+}
+.icons .message:hover{
+  transform: scale(2);
+}
+
+
+@keyframes shake {
+  0%{
+    transform: rotate(0deg);
+  }
+  25%{transform: rotate(20deg);}
+  50%{  transform: rotate(0deg);}
+  75%{  transform: rotate(-20deg);}
+  100%{  transform: rotate(0deg);}
+
+}
+

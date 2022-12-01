@@ -1,3 +1,5 @@
+import { DetailComponent } from './home/detail/detail.component';
+import { CourseComponent } from './student-section/course/course.component';
 import { TeacherSectionComponent } from './teacher-section/teacher-section.component';
 import { StaffComponent } from './staff/staff.component';
 import { StudentComponent } from './student/student.component';
@@ -31,6 +33,10 @@ const routes: Routes = [
 				component: HomeComponent
 				// canActivate: [AuthGuard]
 			},
+      {
+        path:"details/:name",
+        component:DetailComponent
+      },
 			{
 				path: 'teachers',
 				component: TeacherComponent
@@ -44,9 +50,10 @@ const routes: Routes = [
 				component: StudentComponent
 			},
 			{
-				path: 'staffs',
-				component: StaffComponent
+				path: 'courses',
+				component: CourseComponent
 			},
+
 
 		]
 		// canActivate: [AuthGuard]

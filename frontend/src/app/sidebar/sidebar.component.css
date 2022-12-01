@@ -1,18 +1,20 @@
+
 nav{
+
   background-color:  rgb(32, 32, 80) !important;
   color: white;
   font-size: 400;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   float: left;
-  min-height: 750px;
+  height:100% !important;
   width: 16% !important;
   min-width: 215px;
   font-weight: normal !important;
-
+  min-height:750px;
 }
 
 .container-fluid ul{
-  /* display: inline-block; */
+
   display: flex;
   justify-content: start !important;
   flex-direction: column;
@@ -23,6 +25,7 @@ nav{
   margin: 0%;
   width: 100%;
   padding: 0.1rem;
+  height:100% !important;
 
 }
 .container-fluid ul li img{
@@ -56,8 +59,6 @@ ul li{
   transition:all 1s;
 
 }
-
-
 
 li img{
   transition:all 1s;
