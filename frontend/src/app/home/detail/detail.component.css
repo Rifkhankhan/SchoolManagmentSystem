@@ -28,6 +28,7 @@
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 .box-container{
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
@@ -90,6 +91,7 @@
   font-size: 30px;
   margin-bottom: 1rem;
   letter-spacing: 3px;
+  font-family: sans-serif;
 }
 .icons {
   display: flex;
@@ -122,3 +124,88 @@
 
 }
 
+.box-container .table{
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  margin-inline: 1rem;
+  margin-bottom: 1rem;
+  /* border-radius: 5px ; */
+  box-shadow: 0 .5rem 1rem rgb(152, 135, 135);
+}
+
+.box-container .table h3{
+  font-size: 20px;
+ margin-top: 1rem;
+ margin-bottom: 1rem;
+ font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: brown;
+}
+.box-container .table table{
+  width: 100%;
+}
+.box-container .table .head{
+  width: 100%;
+  background-color: rgb(8, 8, 74);
+  color: white;
+}
+
+.head th{
+  font-size: 20px;
+  font-weight: bold;
+  padding: .5rem;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+table tr,
+table th,
+table td{
+  margin: 0%;
+  padding: .5rem;
+  text-align: center;
+}
+
+table tr{
+  transition: all .2s;
+
+}
+
+table tr:not((:first-child)){
+  font-family: monospace;
+
+}
+table tr:not(:first-child):hover{
+  background-color: rgba(20, 13, 118, 0.667);
+  color: white;
+}
+
+table .img{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+table img{
+  width: 50px;
+  height: 50px;
+  border-radius: 100px;
+  transition: all .5s;
+  margin-right: 0.2rem;
+}
+table img:hover{
+  transform: scale(1.5);
+  cursor: pointer;
+}
+
+
+
+table .btns button{
+  width: 40%;
+  margin-right: 0.5rem;
+  padding: .5rem;
+  font-size: 12px;
+  font-weight: bold;
+  background-color: rgb(44, 139, 0);
+  color: white;
+  border-radius: 5px;
+  border: none;
+}

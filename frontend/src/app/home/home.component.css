@@ -148,7 +148,7 @@
   justify-content: flex-start;
   align-items: start;
   background-color: white;
-  margin: 1rem;
+  margin: .5rem;
   border-radius: 5px ;
   box-shadow: 0 10px 20px rgba(42, 24, 24, 0.592);
   min-height: 200px;
@@ -160,7 +160,7 @@
 .container-image{
   display: block;
   overflow: hidden;
-  margin: 1rem;
+  margin: .5rem;
   border-radius: 5px ;
 
   background-image: url('../../assets/images/istockphoto-1401278271-1024x1024.jpg');
@@ -201,12 +201,12 @@
   align-items: center;
   font-size:25px;
   color: white;
-  transition: all .5s;
+  transition: all 1s;
 }
 
 .box:hover{
-  transform: scale(1.02);
-  box-shadow: 0 1px 10px black;
+  transform: translateX(100deg) !important;
+  /* box-shadow: 0 1px 10px black; */
 }
 
 .box-container  .box-1{

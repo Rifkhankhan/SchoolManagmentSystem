@@ -1,160 +1,972 @@
 <app-layout></app-layout>
 
-
-
 <div class="container">
   <div class="heading">
-    <h1>{{name}}</h1>
+    <h1>{{ name }}</h1>
   </div>
-  <div class="box-container">
-    <div class="box box-1" [routerLink]="['/home','details','student']">
-      <img src="../../../assets/images/more-menu.png" class="more-menu" alt="">
-      <img src="../../../assets/images/people/albert-dera-ILip77SbmOE-unsplash.jpg" alt="" class="profile-image">
+  <div
+    class="box-container"
+    *ngIf="
+      name === 'students' ||
+      name === 'teachers' ||
+      name === 'staffs' ||
+      name === 'parents' ||
+      name === 'oldstudents'
+    "
+  >
+    <div class="box box-1">
+      <img
+        src="../../../assets/images/more-menu.png"
+        class="more-menu"
+        alt=""
+      />
+      <img
+        src="../../../assets/images/people/albert-dera-ILip77SbmOE-unsplash.jpg"
+        alt=""
+        class="profile-image"
+      />
       <h3 class="person-name">Students</h3>
       <div class="icons">
-        <img src="../../../assets/images/call.png" class="cell" alt="" srcset="">
-        <img src="../../../assets/images/email.png"  class="message" alt="" srcset="">
+        <img
+          src="../../../assets/images/call.png"
+          class="cell"
+          alt=""
+          srcset=""
+        />
+        <img
+          src="../../../assets/images/email.png"
+          class="message"
+          alt=""
+          srcset=""
+        />
+      </div>
+    </div>
+    <div class="box box-2">
+      <img
+        src="../../../assets/images/more-menu.png"
+        class="more-menu"
+        alt=""
+      />
+      <img
+        src="../../../assets/images/people/houcine-ncib-B4TjXnI0Y2c-unsplash.jpg"
+        alt=""
+        class="profile-image"
+      />
+      <h3 class="person-name">Students</h3>
+      <div class="icons">
+        <img
+          src="../../../assets/images/call.png"
+          class="cell"
+          alt=""
+          srcset=""
+        />
+        <img
+          src="../../../assets/images/email.png"
+          class="message"
+          alt=""
+          srcset=""
+        />
+      </div>
+    </div>
+    <div class="box box-1">
+      <img
+        src="../../../assets/images/more-menu.png"
+        class="more-menu"
+        alt=""
+      />
+      <img
+        src="../../../assets/images/people/ian-dooley-d1UPkiFd04A-unsplash.jpg"
+        alt=""
+        class="profile-image"
+      />
+      <h3 class="person-name">Students</h3>
+      <div class="icons">
+        <img
+          src="../../../assets/images/call.png"
+          class="cell"
+          alt=""
+          srcset=""
+        />
+        <img
+          src="../../../assets/images/email.png"
+          class="message"
+          alt=""
+          srcset=""
+        />
+      </div>
+    </div>
+    <div class="box box-2">
+      <img
+        src="../../../assets/images/more-menu.png"
+        class="more-menu"
+        alt=""
+      />
+      <img
+        src="../../../assets/images/people/jake-nackos-IF9TK5Uy-KI-unsplash.jpg"
+        alt=""
+        class="profile-image"
+      />
+      <h3 class="person-name">Students</h3>
+      <div class="icons">
+        <img
+          src="../../../assets/images/call.png"
+          class="cell"
+          alt=""
+          srcset=""
+        />
+        <img
+          src="../../../assets/images/email.png"
+          class="message"
+          alt=""
+          srcset=""
+        />
+      </div>
+    </div>
+    <div class="box box-1">
+      <img
+        src="../../../assets/images/more-menu.png"
+        class="more-menu"
+        alt=""
+      />
+      <img
+        src="../../../assets/images/people/jimmy-fermin-bqe0J0b26RQ-unsplash.jpg"
+        alt=""
+        class="profile-image"
+      />
+      <h3 class="person-name">Students</h3>
+      <div class="icons">
+        <img
+          src="../../../assets/images/call.png"
+          class="cell"
+          alt=""
+          srcset=""
+        />
+        <img
+          src="../../../assets/images/email.png"
+          class="message"
+          alt=""
+          srcset=""
+        />
+      </div>
+    </div>
+    <div class="box box-2">
+      <img
+        src="../../../assets/images/more-menu.png"
+        class="more-menu"
+        alt=""
+      />
+      <img
+        src="../../../assets/images/people/joseph-gonzalez-iFgRcqHznqg-unsplash.jpg"
+        alt=""
+        class="profile-image"
+      />
+      <h3 class="person-name">Students</h3>
+      <div class="icons">
+        <img
+          src="../../../assets/images/call.png"
+          class="cell"
+          alt=""
+          srcset=""
+        />
+        <img
+          src="../../../assets/images/email.png"
+          class="message"
+          alt=""
+          srcset=""
+        />
+      </div>
+    </div>
+    <div class="box box-1">
+      <img
+        src="../../../assets/images/more-menu.png"
+        class="more-menu"
+        alt=""
+      />
+      <img
+        src="../../../assets/images/people/jurica-koletic-7YVZYZeITc8-unsplash.jpg"
+        alt=""
+        class="profile-image"
+      />
+      <h3 class="person-name">Students</h3>
+      <div class="icons">
+        <img
+          src="../../../assets/images/call.png"
+          class="cell"
+          alt=""
+          srcset=""
+        />
+        <img
+          src="../../../assets/images/email.png"
+          class="message"
+          alt=""
+          srcset=""
+        />
+      </div>
+    </div>
+    <div class="box box-2">
+      <img
+        src="../../../assets/images/more-menu.png"
+        class="more-menu"
+        alt=""
+      />
+      <img
+        src="../../../assets/images/people/michael-dam-mEZ3PoFGs_k-unsplash.jpg"
+        alt=""
+        class="profile-image"
+      />
+      <h3 class="person-name">Students</h3>
+      <div class="icons">
+        <img
+          src="../../../assets/images/call.png"
+          class="cell"
+          alt=""
+          srcset=""
+        />
+        <img
+          src="../../../assets/images/email.png"
+          class="message"
+          alt=""
+          srcset=""
+        />
+      </div>
+    </div>
+    <div class="box box-1">
+      <img
+        src="../../../assets/images/more-menu.png"
+        class="more-menu"
+        alt=""
+      />
+      <img
+        src="../../../assets/images/people/philip-martin-5aGUyCW_PJw-unsplash.jpg"
+        alt=""
+        class="profile-image"
+      />
+      <h3 class="person-name">Students</h3>
+      <div class="icons">
+        <img
+          src="../../../assets/images/call.png"
+          class="cell"
+          alt=""
+          srcset=""
+        />
+        <img
+          src="../../../assets/images/email.png"
+          class="message"
+          alt=""
+          srcset=""
+        />
+      </div>
+    </div>
+    <div class="box box-2">
+      <img
+        src="../../../assets/images/more-menu.png"
+        class="more-menu"
+        alt=""
+      />
+      <img
+        src="../../../assets/images/people/prince-akachi-J1OScm_uHUQ-unsplash.jpg"
+        alt=""
+        class="profile-image"
+      />
+      <h3 class="person-name">Students</h3>
+      <div class="icons">
+        <img
+          src="../../../assets/images/call.png"
+          class="cell"
+          alt=""
+          srcset=""
+        />
+        <img
+          src="../../../assets/images/email.png"
+          class="message"
+          alt=""
+          srcset=""
+        />
+      </div>
+    </div>
+    <div class="box box-1">
+      <img
+        src="../../../assets/images/more-menu.png"
+        class="more-menu"
+        alt=""
+      />
+      <img
+        src="../../../assets/images/people/rafaella-mendes-diniz-et_78QkMMQs-unsplash.jpg"
+        alt=""
+        class="profile-image"
+      />
+      <h3 class="person-name">Students</h3>
+      <div class="icons">
+        <img
+          src="../../../assets/images/call.png"
+          class="cell"
+          alt=""
+          srcset=""
+        />
+        <img
+          src="../../../assets/images/email.png"
+          class="message"
+          alt=""
+          srcset=""
+        />
+      </div>
+    </div>
+    <div class="box box-2">
+      <img
+        src="../../../assets/images/more-menu.png"
+        class="more-menu"
+        alt=""
+      />
+      <img
+        src="../../../assets/images/people/rayul-_M6gy9oHgII-unsplash.jpg"
+        alt=""
+        class="profile-image"
+      />
+      <h3 class="person-name">Students</h3>
+      <div class="icons">
+        <img
+          src="../../../assets/images/call.png"
+          class="cell"
+          alt=""
+          srcset=""
+        />
+        <img
+          src="../../../assets/images/email.png"
+          class="message"
+          alt=""
+          srcset=""
+        />
+      </div>
+    </div>
 
-      </div>
-    </div>
     <div class="box box-2">
-      <img src="../../../assets/images/more-menu.png" class="more-menu" alt="">
-      <img src="../../../assets/images/people/houcine-ncib-B4TjXnI0Y2c-unsplash.jpg" alt="" class="profile-image">
+      <img
+        src="../../../assets/images/more-menu.png"
+        class="more-menu"
+        alt=""
+      />
+      <img
+        src="../../../assets/images/people/samsung-memory-DI2SR-IxkCg-unsplash.jpg"
+        alt=""
+        class="profile-image"
+      />
       <h3 class="person-name">Students</h3>
       <div class="icons">
-        <img src="../../../assets/images/call.png" class="cell" alt="" srcset="">
-        <img src="../../../assets/images/email.png"  class="message" alt="" srcset="">
-      </div>
-    </div>
-    <div class="box box-1" [routerLink]="['/home','details','student']">
-      <img src="../../../assets/images/more-menu.png" class="more-menu" alt="">
-      <img src="../../../assets/images/people/ian-dooley-d1UPkiFd04A-unsplash.jpg" alt="" class="profile-image">
-      <h3 class="person-name">Students</h3>
-      <div class="icons">
-        <img src="../../../assets/images/call.png" class="cell" alt="" srcset="">
-        <img src="../../../assets/images/email.png"  class="message" alt="" srcset="">
-      </div>
-    </div>
-    <div class="box box-2">
-      <img src="../../../assets/images/more-menu.png" class="more-menu" alt="">
-      <img src="../../../assets/images/people/jake-nackos-IF9TK5Uy-KI-unsplash.jpg" alt="" class="profile-image">
-      <h3 class="person-name">Students</h3>
-      <div class="icons">
-        <img src="../../../assets/images/call.png" class="cell" alt="" srcset="">
-        <img src="../../../assets/images/email.png"  class="message" alt="" srcset="">
-      </div>
-    </div>
-    <div class="box box-1" [routerLink]="['/home','details','student']">
-      <img src="../../../assets/images/more-menu.png" class="more-menu" alt="">
-      <img src="../../../assets/images/people/jimmy-fermin-bqe0J0b26RQ-unsplash.jpg" alt="" class="profile-image">
-      <h3 class="person-name">Students</h3>
-      <div class="icons">
-         <img src="../../../assets/images/call.png" class="cell" alt="" srcset="">
-        <img src="../../../assets/images/email.png"  class="message" alt="" srcset="">
-      </div>
-    </div>
-    <div class="box box-2">
-      <img src="../../../assets/images/more-menu.png" class="more-menu" alt="">
-      <img src="../../../assets/images/people/joseph-gonzalez-iFgRcqHznqg-unsplash.jpg" alt="" class="profile-image">
-      <h3 class="person-name">Students</h3>
-      <div class="icons">
-         <img src="../../../assets/images/call.png" class="cell" alt="" srcset="">
-        <img src="../../../assets/images/email.png"  class="message" alt="" srcset="">
-      </div>
-    </div>
-    <div class="box box-1" [routerLink]="['/home','details','student']">
-      <img src="../../../assets/images/more-menu.png" class="more-menu" alt="">
-      <img src="../../../assets/images/people/jurica-koletic-7YVZYZeITc8-unsplash.jpg" alt="" class="profile-image">
-      <h3 class="person-name">Students</h3>
-      <div class="icons">
-         <img src="../../../assets/images/call.png" class="cell" alt="" srcset="">
-        <img src="../../../assets/images/email.png"  class="message" alt="" srcset="">
-      </div>
-    </div>
-    <div class="box box-2">
-      <img src="../../../assets/images/more-menu.png" class="more-menu" alt="">
-      <img src="../../../assets/images/people/michael-dam-mEZ3PoFGs_k-unsplash.jpg" alt="" class="profile-image">
-      <h3 class="person-name">Students</h3>
-      <div class="icons">
-         <img src="../../../assets/images/call.png" class="cell" alt="" srcset="">
-        <img src="../../../assets/images/email.png"  class="message" alt="" srcset="">
-      </div>
-    </div>
-    <div class="box box-1" [routerLink]="['/home','details','student']">
-      <img src="../../../assets/images/more-menu.png" class="more-menu" alt="">
-      <img src="../../../assets/images/people/philip-martin-5aGUyCW_PJw-unsplash.jpg" alt="" class="profile-image">
-      <h3 class="person-name">Students</h3>
-      <div class="icons">
-         <img src="../../../assets/images/call.png" class="cell" alt="" srcset="">
-        <img src="../../../assets/images/email.png"  class="message" alt="" srcset="">
-      </div>
-    </div>
-    <div class="box box-2">
-      <img src="../../../assets/images/more-menu.png" class="more-menu" alt="">
-      <img src="../../../assets/images/people/prince-akachi-J1OScm_uHUQ-unsplash.jpg" alt="" class="profile-image">
-      <h3 class="person-name">Students</h3>
-      <div class="icons">
-         <img src="../../../assets/images/call.png" class="cell" alt="" srcset="">
-        <img src="../../../assets/images/email.png"  class="message" alt="" srcset="">
-      </div>
-    </div>
-    <div class="box box-1" [routerLink]="['/home','details','student']">
-      <img src="../../../assets/images/more-menu.png" class="more-menu" alt="">
-      <img src="../../../assets/images/people/rafaella-mendes-diniz-et_78QkMMQs-unsplash.jpg" alt="" class="profile-image">
-      <h3 class="person-name">Students</h3>
-      <div class="icons">
-         <img src="../../../assets/images/call.png" class="cell" alt="" srcset="">
-        <img src="../../../assets/images/email.png"  class="message" alt="" srcset="">
-      </div>
-    </div>
-    <div class="box box-2">
-      <img src="../../../assets/images/more-menu.png" class="more-menu" alt="">
-      <img src="../../../assets/images/people/rayul-_M6gy9oHgII-unsplash.jpg" alt="" class="profile-image">
-      <h3 class="person-name">Students</h3>
-      <div class="icons">
-         <img src="../../../assets/images/call.png" class="cell" alt="" srcset="">
-        <img src="../../../assets/images/email.png"  class="message" alt="" srcset="">
+        <img
+          src="../../../assets/images/call.png"
+          class="cell"
+          alt=""
+          srcset=""
+        />
+        <img
+          src="../../../assets/images/email.png"
+          class="message"
+          alt=""
+          srcset=""
+        />
       </div>
     </div>
 
     <div class="box box-2">
-      <img src="../../../assets/images/more-menu.png" class="more-menu" alt="">
-      <img src="../../../assets/images/people/samsung-memory-DI2SR-IxkCg-unsplash.jpg" alt="" class="profile-image">
+      <img
+        src="../../../assets/images/more-menu.png"
+        class="more-menu"
+        alt=""
+      />
+      <img
+        src="../../../assets/images/people/samsung-memory-hjRC0i0oJxg-unsplash.jpg"
+        alt=""
+        class="profile-image"
+      />
       <h3 class="person-name">Students</h3>
       <div class="icons">
-         <img src="../../../assets/images/call.png" class="cell" alt="" srcset="">
-        <img src="../../../assets/images/email.png"  class="message" alt="" srcset="">
+        <img
+          src="../../../assets/images/call.png"
+          class="cell"
+          alt=""
+          srcset=""
+        />
+        <img
+          src="../../../assets/images/email.png"
+          class="message"
+          alt=""
+          srcset=""
+        />
+      </div>
+    </div>
+    <div class="box box-2">
+      <img
+        src="../../../assets/images/more-menu.png"
+        class="more-menu"
+        alt=""
+      />
+      <img
+        src="../../../assets/images/people/stefan-stefancik-QXevDflbl8A-unsplash.jpg"
+        alt=""
+        class="profile-image"
+      />
+      <h3 class="person-name">Students</h3>
+      <div class="icons">
+        <img
+          src="../../../assets/images/call.png"
+          class="cell"
+          alt=""
+          srcset=""
+        />
+        <img
+          src="../../../assets/images/email.png"
+          class="message"
+          alt=""
+          srcset=""
+        />
       </div>
     </div>
 
     <div class="box box-2">
-      <img src="../../../assets/images/more-menu.png" class="more-menu" alt="">
-      <img src="../../../assets/images/people/samsung-memory-hjRC0i0oJxg-unsplash.jpg" alt="" class="profile-image">
+      <img
+        src="../../../assets/images/more-menu.png"
+        class="more-menu"
+        alt=""
+      />
+      <img
+        src="../../../assets/images/people/toa-heftiba-O3ymvT7Wf9U-unsplash.jpg"
+        alt=""
+        class="profile-image"
+      />
       <h3 class="person-name">Students</h3>
       <div class="icons">
-         <img src="../../../assets/images/call.png" class="cell" alt="" srcset="">
-        <img src="../../../assets/images/email.png"  class="message" alt="" srcset="">
+        <img
+          src="../../../assets/images/call.png"
+          class="cell"
+          alt=""
+          srcset=""
+        />
+        <img
+          src="../../../assets/images/email.png"
+          class="message"
+          alt=""
+          srcset=""
+        />
       </div>
     </div>
-    <div class="box box-2">
-      <img src="../../../assets/images/more-menu.png" class="more-menu" alt="">
-      <img src="../../../assets/images/people/stefan-stefancik-QXevDflbl8A-unsplash.jpg" alt="" class="profile-image">
-      <h3 class="person-name">Students</h3>
-      <div class="icons">
-         <img src="../../../assets/images/call.png" class="cell" alt="" srcset="">
-        <img src="../../../assets/images/email.png"  class="message" alt="" srcset="">
-      </div>
+  </div>
+
+  <div
+    class="box-container"
+    *ngIf="
+      name === 'exams' ||
+      name === 'fees' ||
+      name === 'events' ||
+      name === 'courses'
+    "
+  >
+    <div class="table physical-students">
+      <h3>Physical Students</h3>
+      <table>
+        <tr class="head">
+          <th>No</th>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Teachers</th>
+          <th>Students</th>
+          <th>Fees</th>
+          <th>Class</th>
+          <th>place</th>
+          <th>Date</th>
+          <th>Action</th>
+        </tr>
+
+        <tr>
+          <td>1</td>
+          <td>11312</td>
+          <td>Exam1</td>
+          <td class="img">
+            <img
+              src="../../../assets/images/people/aiony-haust-3TLl_97HNJo-unsplash.jpg"
+              alt=""
+              srcset=""
+            />
+            <img
+              src="../../../assets/images/people/albert-dera-ILip77SbmOE-unsplash.jpg"
+              alt=""
+              srcset=""
+            />
+            <img
+              src="../../../assets/images/people/houcine-ncib-B4TjXnI0Y2c-unsplash.jpg"
+              alt=""
+              srcset=""
+            />
+          </td>
+          <td>123</td>
+          <td>200</td>
+          <td>A/L</td>
+          <td>Main Hall</td>
+          <td>2022-12-12</td>
+          <td class="btns">
+            <button>Proceed</button><button>Cancel</button>
+          </td>
+        </tr>
+
+        <tr>
+          <td>1</td>
+          <td>Exam1</td>
+          <td class="img">
+            <img
+              src="../../../assets/images/people/aiony-haust-3TLl_97HNJo-unsplash.jpg"
+              alt=""
+              srcset=""
+            />
+            <img
+              src="../../../assets/images/people/albert-dera-ILip77SbmOE-unsplash.jpg"
+              alt=""
+              srcset=""
+            />
+            <img
+              src="../../../assets/images/people/houcine-ncib-B4TjXnI0Y2c-unsplash.jpg"
+              alt=""
+              srcset=""
+            />
+          </td>
+          <td>Students 1</td>
+          <td>2022-12-12</td>
+        </tr>
+
+        <tr>
+          <td>1</td>
+          <td>Exam1</td>
+          <td class="img">
+            <img
+              src="../../../assets/images/people/aiony-haust-3TLl_97HNJo-unsplash.jpg"
+              alt=""
+              srcset=""
+            />
+            <img
+              src="../../../assets/images/people/albert-dera-ILip77SbmOE-unsplash.jpg"
+              alt=""
+              srcset=""
+            />
+            <img
+              src="../../../assets/images/people/houcine-ncib-B4TjXnI0Y2c-unsplash.jpg"
+              alt=""
+              srcset=""
+            />
+          </td>
+          <td>Students 1</td>
+          <td>2022-12-12</td>
+        </tr>
+
+        <tr>
+          <td>1</td>
+          <td>Exam1</td>
+          <td class="img">
+            <img
+              src="../../../assets/images/people/aiony-haust-3TLl_97HNJo-unsplash.jpg"
+              alt=""
+              srcset=""
+            />
+            <img
+              src="../../../assets/images/people/albert-dera-ILip77SbmOE-unsplash.jpg"
+              alt=""
+              srcset=""
+            />
+            <img
+              src="../../../assets/images/people/houcine-ncib-B4TjXnI0Y2c-unsplash.jpg"
+              alt=""
+              srcset=""
+            />
+          </td>
+          <td>Students 1</td>
+          <td>2022-12-12</td>
+        </tr>
+
+        <tr>
+          <td>1</td>
+          <td>Exam1</td>
+          <td class="img">
+            <img
+              src="../../../assets/images/people/aiony-haust-3TLl_97HNJo-unsplash.jpg"
+              alt=""
+              srcset=""
+            />
+            <img
+              src="../../../assets/images/people/albert-dera-ILip77SbmOE-unsplash.jpg"
+              alt=""
+              srcset=""
+            />
+            <img
+              src="../../../assets/images/people/houcine-ncib-B4TjXnI0Y2c-unsplash.jpg"
+              alt=""
+              srcset=""
+            />
+          </td>
+          <td>Students 1</td>
+          <td>2022-12-12</td>
+        </tr>
+      </table>
     </div>
+    <div class="table bio-students">
+      <h3>Biological Students</h3>
+      <table>
+        <tr class="head">
+          <th>No</th>
+          <th>Name</th>
+          <th>Teachers</th>
+          <th>Students</th>
+          <th>Date</th>
+        </tr>
 
-    <div class="box box-2">
-      <img src="../../../assets/images/more-menu.png" class="more-menu" alt="">
-      <img src="../../../assets/images/people/toa-heftiba-O3ymvT7Wf9U-unsplash.jpg" alt="" class="profile-image">
-      <h3 class="person-name">Students</h3>
-      <div class="icons">
-         <img src="../../../assets/images/call.png" class="cell" alt="" srcset="">
-        <img src="../../../assets/images/email.png"  class="message" alt="" srcset="">
-      </div>
+        <tr>
+          <td>1</td>
+          <td>Exam1</td>
+          <td>Teacher 1</td>
+          <td>Students 1</td>
+          <td>2022-12-12</td>
+        </tr>
+
+        <tr>
+          <td>1</td>
+          <td>Exam1</td>
+          <td>Teacher 1</td>
+          <td>Students 1</td>
+          <td>2022-12-12</td>
+        </tr>
+
+        <tr>
+          <td>1</td>
+          <td>Exam1</td>
+          <td>Teacher 1</td>
+          <td>Students 1</td>
+          <td>2022-12-12</td>
+        </tr>
+
+        <tr>
+          <td>1</td>
+          <td>Exam1</td>
+          <td>Teacher 1</td>
+          <td>Students 1</td>
+          <td>2022-12-12</td>
+        </tr>
+
+        <tr>
+          <td>1</td>
+          <td>Exam1</td>
+          <td>Teacher 1</td>
+          <td>Students 1</td>
+          <td>2022-12-12</td>
+        </tr>
+      </table>
     </div>
+    <div class="table commerce-students">
+      <h3>Commence Students</h3>
+      <table>
+        <tr class="head">
+          <th>No</th>
+          <th>Name</th>
+          <th>Teachers</th>
+          <th>Students</th>
+          <th>Date</th>
+        </tr>
 
+        <tr>
+          <td>1</td>
+          <td>Exam1</td>
+          <td>Teacher 1</td>
+          <td>Students 1</td>
+          <td>2022-12-12</td>
+        </tr>
 
+        <tr>
+          <td>1</td>
+          <td>Exam1</td>
+          <td>Teacher 1</td>
+          <td>Students 1</td>
+          <td>2022-12-12</td>
+        </tr>
+
+        <tr>
+          <td>1</td>
+          <td>Exam1</td>
+          <td>Teacher 1</td>
+          <td>Students 1</td>
+          <td>2022-12-12</td>
+        </tr>
+
+        <tr>
+          <td>1</td>
+          <td>Exam1</td>
+          <td>Teacher 1</td>
+          <td>Students 1</td>
+          <td>2022-12-12</td>
+        </tr>
+
+        <tr>
+          <td>1</td>
+          <td>Exam1</td>
+          <td>Teacher 1</td>
+          <td>Students 1</td>
+          <td>2022-12-12</td>
+        </tr>
+      </table>
+    </div>
+    <div class="table technology-students">
+      <h3>Technology Students</h3>
+      <table>
+        <tr class="head">
+          <th>No</th>
+          <th>Name</th>
+          <th>Teachers</th>
+          <th>Students</th>
+          <th>Date</th>
+        </tr>
+
+        <tr>
+          <td>1</td>
+          <td>Exam1</td>
+          <td>Teacher 1</td>
+          <td>Students 1</td>
+          <td>2022-12-12</td>
+        </tr>
+
+        <tr>
+          <td>1</td>
+          <td>Exam1</td>
+          <td>Teacher 1</td>
+          <td>Students 1</td>
+          <td>2022-12-12</td>
+        </tr>
+
+        <tr>
+          <td>1</td>
+          <td>Exam1</td>
+          <td>Teacher 1</td>
+          <td>Students 1</td>
+          <td>2022-12-12</td>
+        </tr>
+
+        <tr>
+          <td>1</td>
+          <td>Exam1</td>
+          <td>Teacher 1</td>
+          <td>Students 1</td>
+          <td>2022-12-12</td>
+        </tr>
+
+        <tr>
+          <td>1</td>
+          <td>Exam1</td>
+          <td>Teacher 1</td>
+          <td>Students 1</td>
+          <td>2022-12-12</td>
+        </tr>
+      </table>
+    </div>
+    <div class="table arts-students">
+      <h3>Arts Students</h3>
+      <table>
+        <tr class="head">
+          <th>No</th>
+          <th>Name</th>
+          <th>Teachers</th>
+          <th>Students</th>
+          <th>Date</th>
+        </tr>
+
+        <tr>
+          <td>1</td>
+          <td>Exam1</td>
+          <td>Teacher 1</td>
+          <td>Students 1</td>
+          <td>2022-12-12</td>
+        </tr>
+
+        <tr>
+          <td>1</td>
+          <td>Exam1</td>
+          <td>Teacher 1</td>
+          <td>Students 1</td>
+          <td>2022-12-12</td>
+        </tr>
+
+        <tr>
+          <td>1</td>
+          <td>Exam1</td>
+          <td>Teacher 1</td>
+          <td>Students 1</td>
+          <td>2022-12-12</td>
+        </tr>
+
+        <tr>
+          <td>1</td>
+          <td>Exam1</td>
+          <td>Teacher 1</td>
+          <td>Students 1</td>
+          <td>2022-12-12</td>
+        </tr>
+
+        <tr>
+          <td>1</td>
+          <td>Exam1</td>
+          <td>Teacher 1</td>
+          <td>Students 1</td>
+          <td>2022-12-12</td>
+        </tr>
+      </table>
+    </div>
+    <div class="table ordinary-students">
+      <h3>Ordinary Students</h3>
+      <table>
+        <tr class="head">
+          <th>No</th>
+          <th>Name</th>
+          <th>Teachers</th>
+          <th>Students</th>
+          <th>Date</th>
+        </tr>
+
+        <tr>
+          <td>1</td>
+          <td>Exam1</td>
+          <td>Teacher 1</td>
+          <td>Students 1</td>
+          <td>2022-12-12</td>
+        </tr>
+
+        <tr>
+          <td>1</td>
+          <td>Exam1</td>
+          <td>Teacher 1</td>
+          <td>Students 1</td>
+          <td>2022-12-12</td>
+        </tr>
+
+        <tr>
+          <td>1</td>
+          <td>Exam1</td>
+          <td>Teacher 1</td>
+          <td>Students 1</td>
+          <td>2022-12-12</td>
+        </tr>
+
+        <tr>
+          <td>1</td>
+          <td>Exam1</td>
+          <td>Teacher 1</td>
+          <td>Students 1</td>
+          <td>2022-12-12</td>
+        </tr>
+
+        <tr>
+          <td>1</td>
+          <td>Exam1</td>
+          <td>Teacher 1</td>
+          <td>Students 1</td>
+          <td>2022-12-12</td>
+        </tr>
+      </table>
+    </div>
+    <div class="table grade10-students">
+      <h3>Grade 10 Students</h3>
+      <table>
+        <tr class="head">
+          <th>No</th>
+          <th>Name</th>
+          <th>Teachers</th>
+          <th>Students</th>
+          <th>Date</th>
+        </tr>
+
+        <tr>
+          <td>1</td>
+          <td>Exam1</td>
+          <td>Teacher 1</td>
+          <td>Students 1</td>
+          <td>2022-12-12</td>
+        </tr>
+
+        <tr>
+          <td>1</td>
+          <td>Exam1</td>
+          <td>Teacher 1</td>
+          <td>Students 1</td>
+          <td>2022-12-12</td>
+        </tr>
+
+        <tr>
+          <td>1</td>
+          <td>Exam1</td>
+          <td>Teacher 1</td>
+          <td>Students 1</td>
+          <td>2022-12-12</td>
+        </tr>
+
+        <tr>
+          <td>1</td>
+          <td>Exam1</td>
+          <td>Teacher 1</td>
+          <td>Students 1</td>
+          <td>2022-12-12</td>
+        </tr>
+
+        <tr>
+          <td>1</td>
+          <td>Exam1</td>
+          <td>Teacher 1</td>
+          <td>Students 1</td>
+          <td>2022-12-12</td>
+        </tr>
+      </table>
+    </div>
+    <div class="table other-students">
+      <h3>Other Students</h3>
+      <table>
+        <tr class="head">
+          <th>No</th>
+          <th>Name</th>
+          <th>Teachers</th>
+          <th>Students</th>
+          <th>Date</th>
+        </tr>
+
+        <tr>
+          <td>1</td>
+          <td>Exam1</td>
+          <td>Teacher 1</td>
+          <td>Students 1</td>
+          <td>2022-12-12</td>
+        </tr>
+
+        <tr>
+          <td>1</td>
+          <td>Exam1</td>
+          <td>Teacher 1</td>
+          <td>Students 1</td>
+          <td>2022-12-12</td>
+        </tr>
+
+        <tr>
+          <td>1</td>
+          <td>Exam1</td>
+          <td>Teacher 1</td>
+          <td>Students 1</td>
+          <td>2022-12-12</td>
+        </tr>
+
+        <tr>
+          <td>1</td>
+          <td>Exam1</td>
+          <td>Teacher 1</td>
+          <td>Students 1</td>
+          <td>2022-12-12</td>
+        </tr>
+
+        <tr>
+          <td>1</td>
+          <td>Exam1</td>
+          <td>Teacher 1</td>
+          <td>Students 1</td>
+          <td>2022-12-12</td>
+        </tr>
+      </table>
+    </div>
+  </div>
 </div>
