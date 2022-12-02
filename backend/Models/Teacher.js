@@ -8,15 +8,19 @@ const userSchema = new Schema({
 	genter: { type: String, required: true },
 	address: { type: String, required: true },
 	email: { type: String, required: true ,unique:true},
+	age: { type: Number, required: true },
 	password: { type: String, required: true },
 	mobile: { type: String, required: true ,unique:true},
 	dob: { type: String, required: true },
 	image: { type: String,unique:true},
-    studentId:{type:String,unique:true},
-    grade:{type:String,required:true},
+    teacherId:{type:String,unique:true},
+    classes:{type:Array},
     courses:{type:Array},
-    results:{type:Array}
+	exams:{type:Array},
+	active:{type:Boolean,required:true},
+	salary:[{date:Date,money:Number}],
+	students:{type:Array}
 });
 userSchema.plugin(UniqueValidator); // to use unique value
 
-module.exports = mongoose.model('Student', userSchema);
+module.exports = mongoose.model('Teacher', userSchema);
