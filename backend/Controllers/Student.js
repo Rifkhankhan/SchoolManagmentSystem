@@ -1,34 +1,34 @@
 const HttpError = require("../models/http-error");
 const { validationResult } = require("express-validator");
 const bcrypt = require("bcryptjs");
-const jwt = require("jsonwebtoken");
 const Student = require("../models/Student");
-const uuid = require('uuid/v4');
+const uuid = require('uuid');
 const Course = require("../Models/Course");
 const Exam = require("../Models/Exam");
 
 const createStudent = async (req, res, next) => {
 
-    const {name,grade,gender,age,mobile,address,email,dob}  = req.body;
+  const {name,grade,gender,age,mobile,address,email,dob}  = req.body;
 
 	const newStudent = new Student({
-		name:name,
-        active:true,
+		    name:name,
+        gender:gender,
         address:address,
-        age:age,
-        dob:dob,
         email:email,
-        genter:gender,
+        age:age,
         password:'123456',
-        grade:grade,
         mobile:mobile,
-        studentId:uuid()
+        dob:dob,
+        active:true,
+        grade:grade,
+        studentId:uuid.v1(),
+        image:''
 	});
-	console.log(newStudent);
-
+  
 	try {
-		await newStudent.save();
+    await newStudent.save();
 	} catch (err) {
+    console.log(newStudent);
 		const error = new HttpError('Creating newStudent failed,try again', 500);
 		return next(error);
 	}
@@ -100,7 +100,7 @@ const updateProfile = async (req, res, next) => {
     throw new HttpError("Invalid inputs passed, please check your data.", 422);
   }
 
-  const { email,name,genter,address,mobile,dob,id,image,age,courses,grade,parents } = req.body;
+  const { email,name,gender,address,mobile,dob,id,image,age,courses,grade,parents } = req.body;
 
   let user;
 
@@ -111,19 +111,17 @@ const updateProfile = async (req, res, next) => {
     return next(error);
   }
 
-	const url = req.protocol + '://' + req.get('host');
 
     user.email = email;
     user.name = name,
     user.address = address;
     user.dob = dob;
-    user.genter = genter;
+    user.gender = gender;
     user.age = age;
     user.mobile = mobile;
     user.courses = courses;
     user.grade = grade;
     user.parents = parents;
-    user.image = url + '/uploads/' + req.file.filename
 
   try {
     console.log(user);
@@ -162,6 +160,32 @@ const getStudent = async (req, res, next) => {
 	} else {
     console.log(user);
 		return res.status(201).json(user.toObject({ getters: true }));
+	}
+};
+
+const getStudents = async (req, res, next) => {
+	const errors = validationResult(req);
+
+	if (!errors.isEmpty()) {
+		throw new HttpError('Invalid inputs passed, please check your data.', 422);
+	}
+
+	
+
+	let users;
+
+	try {
+		users = await Student.find();
+	} catch (err) {
+		const error = new HttpError('finding user failed bt id,try again', 500);
+		return next(error);
+	}
+
+	if (!users) {
+		res.status(201).json({ message: 'There is no ususerser ' });
+	} else {
+    console.log(users);
+		return res.status(201).json(users.toObject({ getters: true }));
 	}
 };
 
@@ -334,3 +358,4 @@ exports.getStudent = getStudent;
 exports.applyCourse = applyCourse;
 exports.applyExam = applyExam;
 exports.uploadPhoto = uploadPhoto;
+exports.getStudents = getStudents;

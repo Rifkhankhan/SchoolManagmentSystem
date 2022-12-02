@@ -1,15 +1,16 @@
-
 const mongoose = require('mongoose');
 const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
-
-
 var createError = require('http-errors');
 const app = express();
 
 // const authRouter = require('./route/auth');
-// const postRouter = require('./route/post');
+const studentRouter = require('./Routs/student');
+// const teacherRouter = require('./Routs/teacher');
+// const examRouter = require('./Routs/exam');
+// const courseRouter = require('./Routs/course');
+// const paymentRouter = require('./Routs/payment');
 
 
 //connect mongodb
@@ -28,8 +29,7 @@ mongoose
 app.use(bodyParser.json()); // to get body ,this should be used before routers
 app.use(bodyParser.urlencoded({ extended: false }));
 
-// app.use('/uploads', express.static(path.join('Server/uploads')));
-// console.log(express.static(__dirname)+"/");
+
 app.use(express.static(__dirname+'/'));
 // CORS Headers => Required for cross-origin/ cross-server communication
 app.use((req, res, next) => {
@@ -49,7 +49,11 @@ app.use((req, res, next) => {
 // here route should be mentioned
 
 // app.use('/api/auth', authRouter);
-// app.use('/api/post', postRouter);
+app.use('/api/student', studentRouter);
+// app.use('/api/teacher', teacherRouter);
+// app.use('/api/exam', examRouter);
+// app.use('/api/course', courseRouter);
+// app.use('/api/payment', paymentRouter);
 
 // for unsupported router error handler
 app.use((req, res, next) => {
