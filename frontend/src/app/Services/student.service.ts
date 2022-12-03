@@ -10,6 +10,7 @@ export class StudentService {
 	constructor(private http: HttpClient) {}
 
 	private _students = new BehaviorSubject<Student[]>([]);
+	private _courses = new BehaviorSubject<[]>([]);
 
 	get getStudents() {
 		return this._students.asObservable();
@@ -78,7 +79,7 @@ export class StudentService {
 							fees: data.fees,
 							teachers: data.teachers,
 							parents: data.parents,
-              password:data.password
+							password: data.password
 						});
 					}
 					return students;
@@ -131,20 +132,149 @@ export class StudentService {
 		);
 	}
 
-	applyExam( examId:string, money:string, userId:string) {
+	applyExam(
+		examId: string,
+		money: string,
+		userId: string,
+		event: string,
+		eventname: string
+	) {
+		const data = {
+			examId,
+			money,
+			userId
+		};
 
-    const data = {
-      examId,money,userId
-    }
+		let updatedStudents: Student[];
 
-    // return this.http.patch
-  }
+		return this.getStudents.pipe(
+			take(1),
+			switchMap(students => {
+				if (!students || students.length <= 0) {
+					return this.fetchStudents();
+				} else {
+					return of(students);
+				}
+			}),
+			switchMap(students => {
+				const updatedStudentIndex = students.findIndex(p => p.id === userId);
 
-	applyCourse() {}
+				updatedStudents = [...students];
+				const oldStudent = updatedStudents[updatedStudentIndex];
+
+				updatedStudents[updatedStudentIndex] = {
+					id: userId,
+					fees: [{ date: Date.now().toString(), money: money, event: examId }],
+					active: oldStudent.active,
+					address: oldStudent.address,
+					age: oldStudent.age,
+					courses: oldStudent.courses,
+					dob: oldStudent.dob,
+					email: oldStudent.email,
+					exams: oldStudent.exams,
+					gender: oldStudent.gender,
+					grade: oldStudent.grade,
+					image: oldStudent.image,
+					mobile: oldStudent.mobile,
+					name: oldStudent.name,
+					parents: oldStudent.parents,
+					studentId: oldStudent.studentId,
+					teachers: oldStudent.teachers,
+					password: oldStudent.password
+				};
+
+				return this.http.patch<any>(
+					'http://localhost:3000/api/student/applyExam',
+					data
+				);
+			}),
+			tap(() => {
+				this._students.next(updatedStudents);
+			})
+		);
+	}
+
+	applyCourse(courseId: string, money: string, userId: string) {
+		const data = {
+			courseId,
+			money,
+			userId
+		};
+
+		let courses: any = [];
+		let students: Student[] = [];
+		return this.http
+			.patch<any>('http://localhost:3000/api/student/applyCourse', data)
+			.pipe(
+				take(1),
+				switchMap(data => {
+					courses = data.courses;
+					students = data.students;
+					return this.getStudents;
+				}),
+				tap(data => {
+					this._students.next(students);
+				}),
+				tap(data => {
+					this._courses.next(courses);
+				})
+			);
+	}
 
 	updateProfile() {}
 
-	uploadPhoto() {}
+	uploadPhoto(userId: string, image: File) {
+		const formData = new FormData();
+
+		formData.append('userId', userId);
+		formData.append('image', image);
+
+		let updatedStudents: Student[];
+    let updateStudentData:Student;
+
+		return this.http.patch<any>(
+			'http://localhost:3000/api/student/applyExam',
+			formData
+		).pipe(
+      take(1),
+      switchMap(data=>{
+        updateStudentData = data.user;
+        return this.getStudents
+      }),
+      switchMap(students=>{
+        const updatedStudentIndex = students.findIndex(p => p.id === updateStudentData.id);
+
+				updatedStudents = [...students];
+				const oldStudent = updatedStudents[updatedStudentIndex];
+
+				updatedStudents[updatedStudentIndex] = {
+					id: userId,
+					fees: oldStudent.fees,
+					active: oldStudent.active,
+					address: oldStudent.address,
+					age: oldStudent.age,
+					courses: oldStudent.courses,
+					dob: oldStudent.dob,
+					email: oldStudent.email,
+					exams: oldStudent.exams,
+					gender: oldStudent.gender,
+					grade: oldStudent.grade,
+					image: updateStudentData.image,
+					mobile: oldStudent.mobile,
+					name: oldStudent.name,
+					parents: oldStudent.parents,
+					studentId: oldStudent.studentId,
+					teachers: oldStudent.teachers,
+					password: oldStudent.password
+				};
+
+        return updatedStudents
+      }),
+      tap(students=>{
+        this._students.next(students)
+      })
+    )
+	}
 
 	// cancelShop(shopId:string)
 	// {
