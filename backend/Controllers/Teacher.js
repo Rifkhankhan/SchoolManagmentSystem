@@ -11,7 +11,7 @@ const Salary = require('../Models/Salary');
 
 const createTeacher = async (req, res, next) => {
 
-    const {name,classes,gender,age,mobile,address,email,dob}  = req.body;
+    const {name,gender,age,mobile,address,email,dob}  = req.body;
   let newTeacher;
 
 	 newTeacher = new Teacher({
@@ -23,10 +23,8 @@ const createTeacher = async (req, res, next) => {
         email:email,
         genter:gender,
         password:'123456',
-        classes:classes,
         mobile:mobile,
-        teacherId:uuid.v1(),
-      
+        teacherId:uuid.v2(),
 	});
 	console.log(newTeacher);
 
@@ -327,6 +325,28 @@ const uploadPhoto = async (req,res,next) => {
     });
 }
   
+const getTeachers = async (req,res,next) => {
+  const errors = validationResult(req);
+  
+  if (!errors.isEmpty()) {
+    throw new HttpError("Invalid inputs passed, please check your data.", 422);
+  }
+
+  let teachers;
+
+  try{
+    teachers = await Teacher.find();
+  }
+  catch(err){
+    return next(err);
+  }
+
+  return res.status(200).json({
+    teachers: teachers.map((user) =>
+      user.toObject({ getters: true })
+    )
+  });
+}
 
 exports.paySalary = paySalary;
 exports.createTeacher = createTeacher;
@@ -335,3 +355,4 @@ exports.updatePassword = updatePassword;
 exports.getTeacher = getTeacher;
 exports.applyExam = applyExam;
 exports.uploadPhoto = uploadPhoto;
+exports.getTeachers = getTeachers

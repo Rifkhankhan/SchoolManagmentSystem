@@ -1,0 +1,194 @@
+*{
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+}
+
+
+
+.container{
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+}
+
+.container .heading{
+  margin: 1rem;
+}
+.container .details{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin: auto;
+  width: 100%;
+}
+
+.container .details .personal-details{
+  min-height: 700px;
+  width: 100%;
+  border-radius: 5px;
+  box-shadow: 0 .1rem .6rem rgba(26, 8, 8, 0.511);
+}
+
+.container .details .detail{
+  min-height: 700px;
+  width: 100%;
+  border-radius: 5px;
+}
+
+
+
+.container .details .personal-details{
+  width: 25%;
+  min-width: 350px;
+  background-color: rgba(0, 255, 255, 0.547);
+  display: flex;
+  flex-direction: column;
+}
+
+/* details */
+
+.details .personal-details h2{
+  color: black;
+  font-size: 25px;
+  margin:.5rem;
+}
+
+.details .personal-details .profile-photo{
+  display: flex;
+  flex-direction: column;
+  margin-inline: 1rem;
+  justify-content: center;
+}
+
+.details .personal-details .profile-photo .image{
+  width: 100%;
+  max-height: 250px;
+  min-width: 300px;
+  padding: 0%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+.details .personal-details .profile-photo .image img{
+  width: 80% !important;
+  height: 100%;
+  border-radius:250px;
+  transition: all 1s;
+}
+.details .personal-details .profile-photo .image img:hover{
+  transform: scale(1.1);
+}
+.details .personal-details .profile-photo .data{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: justify;
+}
+
+.details .personal-details .profile-photo .data h3{
+  font-size: 30px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-style: italic;
+  margin: 0.5rem;
+  text-align: center;
+}
+
+
+
+/* profile datas */
+
+.details .profile-datas{
+  width: 100%;
+
+  display: block;
+
+}
+.details .profile-datas table{
+  margin: .5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.details .profile-datas table tr{
+  width: 100%;
+  padding: .5rem;
+  font-size: 1rem;
+  display: block;
+}
+
+.details .profile-datas table tr th{
+  text-align: start;
+  width: 30%;
+  display: inline-block;
+}
+
+.details .profile-datas table tr td{
+  text-align: start;
+  width: 65%;
+  display: inline-block;
+}
+
+
+.container .details .other-details{
+  width: 68%;
+}
+
+.other-details .card-box{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.details .other-details .card-box .card{
+  height: 150px;
+  width: 31%;
+  background-color: rgba(0, 255, 255, 0.547);
+  border-radius: 5px;
+}
+
+.details .other-details .results
+{
+  background-color: rgba(0, 255, 255, 0.547);
+  border-radius: 5px;
+  margin-top: 1rem !important;
+}
+
+.details .other-details .results h3{
+  padding: 1rem;
+  font-size: 20px;
+}
+
+.details .other-details .results .result-table{
+  width: 100%;
+}
+
+.details .other-details .results .result-table table .heading{
+  margin-bottom: 2rem;
+}
+
+.details .other-details .results .result-table table{
+  width: 100%;
+}
+
+
+.details .other-details .results .result-table table tr{
+  width: 100%;
+}
+
+.details .other-details .results .result-table table tr th{
+  margin-bottom: 2rem !important;
+  text-align: start;
+  padding: .5rem;
+
+}
+.details .other-details .results .result-table table tr td
+{
+  padding: .5rem;
+  text-align: start;
+}

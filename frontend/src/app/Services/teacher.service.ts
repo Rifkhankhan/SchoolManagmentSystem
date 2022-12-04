@@ -1,3 +1,4 @@
+import { Teacher } from './../Models/teacher.model';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, take, switchMap, tap, map, of } from 'rxjs';
@@ -8,7 +9,7 @@ import { BehaviorSubject, take, switchMap, tap, map, of } from 'rxjs';
 export class TeacherService {
   constructor(private http: HttpClient) {}
 
-	private _teachers = new BehaviorSubject<[]>([]);
+	private _teachers = new BehaviorSubject<Teacher[]>([]);
 	private _courses = new BehaviorSubject<[]>([]);
 
 	get getTeachers() {
@@ -17,21 +18,21 @@ export class TeacherService {
 
 	createTeacher(
 		name: string,
-		age: number,
 		gender: string,
 		address: string,
-		mobile: string,
 		email: string,
+		age: number,
+		mobile: string,
 		dob: string
 	) {
 		let newTeacher: any;
 
 		const data = {
 			name,
-			age,
 			gender,
-			address,
+			age,
 			mobile,
+			address,
 			email,
 			dob
 		};
@@ -40,9 +41,9 @@ export class TeacherService {
 			.pipe(
 				take(1),
 				switchMap(data => {
-					console.log(data);
+					console.log(data.newTeacher);
 
-					newTeacher = data;
+					newTeacher = data.newTeacher;
 					return this.getTeachers;
 				}),
 				tap(teachers => {
@@ -53,32 +54,32 @@ export class TeacherService {
 
 	fetchTeachers() {
 		return this.http
-			.get<any>('http://localhost:3000/api/teacher/teachers')
+			.get<any>('http://localhost:3000/api/teacher/getTeachers')
 			.pipe(
 				take(1),
 				map(resDate => {
 
 					const teachers = [];
 
-					for (let data of resDate.users) {
+					for (let data of resDate.teachers) {
 						teachers.push({
-							id: data._id,
+							id: data.id,
 							name: data.name,
-							email: data.email,
-							mobile: data.mobile,
 							gender: data.gender,
-							dob: data.dob,
 							address: data.address,
+							email: data.email,
 							age: data.age,
+							mobile: data.mobile,
+							dob: data.dob,
 							image: data.image,
 							teacherId: data.teacherId,
-							grade: data.grade,
+							classes: data.classes,
 							courses: data.courses,
 							exams: data.exams,
 							active: data.active,
-							fees: data.fees,
+							salary: data.salary,
 							teachers: data.teachers,
-							parents: data.parents,
+							students: data.students,
 							password: data.password
 						});
 					}
@@ -97,23 +98,24 @@ export class TeacherService {
 				take(1),
 				map(data => {
 					return {
-						id: data._id,
-						name: data.name,
-						email: data.email,
-						mobile: data.mobile,
-						gender: data.gender,
-						dob: data.dob,
-						address: data.address,
-						age: data.age,
-						image: data.image,
-						teacherId: data.teacherId,
-						grade: data.grade,
-						courses: data.courses,
-						exams: data.exams,
-						active: data.active,
-						fees: data.fees,
-						teachers: data.teachers,
-						parents: data.parents
+						  id: data.user.id,
+							name: data.user.name,
+							gender: data.user.gender,
+							address: data.user.address,
+							email: data.user.email,
+							age: data.user.age,
+							mobile: data.user.mobile,
+							dob: data.user.dob,
+							image: data.user.image,
+							teacherId: data.user.teacherId,
+							classes: data.user.classes,
+							courses: data.user.courses,
+							exams: data.user.exams,
+							active: data.user.active,
+							salary: data.user.salary,
+							teachers: data.user.teachers,
+							students: data.user.students,
+							password: data.user.password
 					};
 				})
 			);

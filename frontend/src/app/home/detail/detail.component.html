@@ -46,31 +46,31 @@
     </div>
   </div>
 
-  <!-- <div
+  <div
     class="box-container"
     *ngIf="
       name === 'teachers'
     "
   >
-    <div class="box box-1"   *ngFor="let teacher of teachers">
+    <div class="box box-1"   *ngFor="let teacher of teachers" [routerLink]="['/home','teachers','details',teacher.id]">
       <img
         src="../../../assets/images/more-menu.png"
         class="more-menu"
         alt=""
       />
       <img
-        *ngIf="!student.image"
+        *ngIf="!teacher.image"
         src="../../../assets/images/people/albert-dera-ILip77SbmOE-unsplash.jpg"
         alt=""
         class="profile-image"
       />
       <img
-      *ngIf="student.image"
-      [src]="student.image"
+      *ngIf="teacher.image"
+      [src]="teacher.image"
       alt=""
       class="profile-image"
     />
-      <h3 class="person-name">{{student.name}}</h3>
+      <h3 class="person-name">{{teacher.name}}</h3>
       <div class="icons">
         <img
           src="../../../assets/images/call.png"
@@ -86,7 +86,7 @@
         />
       </div>
     </div>
-  </div> -->
+  </div>
 
   <div
     class="box-container"

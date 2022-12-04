@@ -4,6 +4,7 @@ import { Subscription } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { StudentService } from 'src/app/Services/student.service';
+import { Teacher } from 'src/app/Models/teacher.model';
 
 @Component({
   selector: 'app-detail',
@@ -18,6 +19,7 @@ export class DetailComponent implements OnInit,OnDestroy {
   paraSub:Subscription = new Subscription()
   studentSub:Subscription = new Subscription()
   students!:Student[];
+  teachers!:Teacher[];
   name:any = ''
   isLoading = false
   ngOnInit(): void {
@@ -38,14 +40,14 @@ export class DetailComponent implements OnInit,OnDestroy {
           this.isLoading = false
         })
       }
-      // else if(paramMap.get('name') === 'teachers'){
-      //   this.studentSub = this.teacherService..subscribe(students=>{
-      //     this.students = students
-      //     console.log(students);
+      else if(paramMap.get('name') === 'teachers'){
+        this.studentSub = this.teacherService.fetchTeachers().subscribe(teachers=>{
+          this.teachers = teachers
+          console.log(teachers);
 
-      //     this.isLoading = false
-      //   })
-      // }
+          this.isLoading = false
+        })
+      }
     })
   }
 
