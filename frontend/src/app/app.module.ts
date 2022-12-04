@@ -20,6 +20,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { ChangePasswordComponent } from './profile/change-password/change-password.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DetailComponent } from './home/detail/detail.component';
+import { StudentDetailComponent } from './home/detail/student-detail/student-detail.component';
+import { ExamDetailComponent } from './home/detail/exam-detail/exam-detail.component';
 
 @NgModule({
 	declarations: [
@@ -33,7 +35,9 @@ import { DetailComponent } from './home/detail/detail.component';
 		LayoutComponent,
 		ChangePasswordComponent,
     StaffComponent,
-    DetailComponent
+    DetailComponent,
+    StudentDetailComponent,
+    ExamDetailComponent
 
 	],
 	providers: [],

@@ -7,433 +7,28 @@
   <div
     class="box-container"
     *ngIf="
-      name === 'students' ||
-      name === 'teachers' ||
-      name === 'staffs' ||
-      name === 'parents' ||
-      name === 'oldstudents'
+      name === 'students'
     "
   >
-    <div class="box box-1">
+    <div class="box box-1"   *ngFor="let student of students" [routerLink]="['/home','students','details',student.id]">
       <img
         src="../../../assets/images/more-menu.png"
         class="more-menu"
         alt=""
       />
       <img
+        *ngIf="!student.image"
         src="../../../assets/images/people/albert-dera-ILip77SbmOE-unsplash.jpg"
         alt=""
         class="profile-image"
       />
-      <h3 class="person-name">Students</h3>
-      <div class="icons">
-        <img
-          src="../../../assets/images/call.png"
-          class="cell"
-          alt=""
-          srcset=""
-        />
-        <img
-          src="../../../assets/images/email.png"
-          class="message"
-          alt=""
-          srcset=""
-        />
-      </div>
-    </div>
-    <div class="box box-2">
       <img
-        src="../../../assets/images/more-menu.png"
-        class="more-menu"
-        alt=""
-      />
-      <img
-        src="../../../assets/images/people/houcine-ncib-B4TjXnI0Y2c-unsplash.jpg"
-        alt=""
-        class="profile-image"
-      />
-      <h3 class="person-name">Students</h3>
-      <div class="icons">
-        <img
-          src="../../../assets/images/call.png"
-          class="cell"
-          alt=""
-          srcset=""
-        />
-        <img
-          src="../../../assets/images/email.png"
-          class="message"
-          alt=""
-          srcset=""
-        />
-      </div>
-    </div>
-    <div class="box box-1">
-      <img
-        src="../../../assets/images/more-menu.png"
-        class="more-menu"
-        alt=""
-      />
-      <img
-        src="../../../assets/images/people/ian-dooley-d1UPkiFd04A-unsplash.jpg"
-        alt=""
-        class="profile-image"
-      />
-      <h3 class="person-name">Students</h3>
-      <div class="icons">
-        <img
-          src="../../../assets/images/call.png"
-          class="cell"
-          alt=""
-          srcset=""
-        />
-        <img
-          src="../../../assets/images/email.png"
-          class="message"
-          alt=""
-          srcset=""
-        />
-      </div>
-    </div>
-    <div class="box box-2">
-      <img
-        src="../../../assets/images/more-menu.png"
-        class="more-menu"
-        alt=""
-      />
-      <img
-        src="../../../assets/images/people/jake-nackos-IF9TK5Uy-KI-unsplash.jpg"
-        alt=""
-        class="profile-image"
-      />
-      <h3 class="person-name">Students</h3>
-      <div class="icons">
-        <img
-          src="../../../assets/images/call.png"
-          class="cell"
-          alt=""
-          srcset=""
-        />
-        <img
-          src="../../../assets/images/email.png"
-          class="message"
-          alt=""
-          srcset=""
-        />
-      </div>
-    </div>
-    <div class="box box-1">
-      <img
-        src="../../../assets/images/more-menu.png"
-        class="more-menu"
-        alt=""
-      />
-      <img
-        src="../../../assets/images/people/jimmy-fermin-bqe0J0b26RQ-unsplash.jpg"
-        alt=""
-        class="profile-image"
-      />
-      <h3 class="person-name">Students</h3>
-      <div class="icons">
-        <img
-          src="../../../assets/images/call.png"
-          class="cell"
-          alt=""
-          srcset=""
-        />
-        <img
-          src="../../../assets/images/email.png"
-          class="message"
-          alt=""
-          srcset=""
-        />
-      </div>
-    </div>
-    <div class="box box-2">
-      <img
-        src="../../../assets/images/more-menu.png"
-        class="more-menu"
-        alt=""
-      />
-      <img
-        src="../../../assets/images/people/joseph-gonzalez-iFgRcqHznqg-unsplash.jpg"
-        alt=""
-        class="profile-image"
-      />
-      <h3 class="person-name">Students</h3>
-      <div class="icons">
-        <img
-          src="../../../assets/images/call.png"
-          class="cell"
-          alt=""
-          srcset=""
-        />
-        <img
-          src="../../../assets/images/email.png"
-          class="message"
-          alt=""
-          srcset=""
-        />
-      </div>
-    </div>
-    <div class="box box-1">
-      <img
-        src="../../../assets/images/more-menu.png"
-        class="more-menu"
-        alt=""
-      />
-      <img
-        src="../../../assets/images/people/jurica-koletic-7YVZYZeITc8-unsplash.jpg"
-        alt=""
-        class="profile-image"
-      />
-      <h3 class="person-name">Students</h3>
-      <div class="icons">
-        <img
-          src="../../../assets/images/call.png"
-          class="cell"
-          alt=""
-          srcset=""
-        />
-        <img
-          src="../../../assets/images/email.png"
-          class="message"
-          alt=""
-          srcset=""
-        />
-      </div>
-    </div>
-    <div class="box box-2">
-      <img
-        src="../../../assets/images/more-menu.png"
-        class="more-menu"
-        alt=""
-      />
-      <img
-        src="../../../assets/images/people/michael-dam-mEZ3PoFGs_k-unsplash.jpg"
-        alt=""
-        class="profile-image"
-      />
-      <h3 class="person-name">Students</h3>
-      <div class="icons">
-        <img
-          src="../../../assets/images/call.png"
-          class="cell"
-          alt=""
-          srcset=""
-        />
-        <img
-          src="../../../assets/images/email.png"
-          class="message"
-          alt=""
-          srcset=""
-        />
-      </div>
-    </div>
-    <div class="box box-1">
-      <img
-        src="../../../assets/images/more-menu.png"
-        class="more-menu"
-        alt=""
-      />
-      <img
-        src="../../../assets/images/people/philip-martin-5aGUyCW_PJw-unsplash.jpg"
-        alt=""
-        class="profile-image"
-      />
-      <h3 class="person-name">Students</h3>
-      <div class="icons">
-        <img
-          src="../../../assets/images/call.png"
-          class="cell"
-          alt=""
-          srcset=""
-        />
-        <img
-          src="../../../assets/images/email.png"
-          class="message"
-          alt=""
-          srcset=""
-        />
-      </div>
-    </div>
-    <div class="box box-2">
-      <img
-        src="../../../assets/images/more-menu.png"
-        class="more-menu"
-        alt=""
-      />
-      <img
-        src="../../../assets/images/people/prince-akachi-J1OScm_uHUQ-unsplash.jpg"
-        alt=""
-        class="profile-image"
-      />
-      <h3 class="person-name">Students</h3>
-      <div class="icons">
-        <img
-          src="../../../assets/images/call.png"
-          class="cell"
-          alt=""
-          srcset=""
-        />
-        <img
-          src="../../../assets/images/email.png"
-          class="message"
-          alt=""
-          srcset=""
-        />
-      </div>
-    </div>
-    <div class="box box-1">
-      <img
-        src="../../../assets/images/more-menu.png"
-        class="more-menu"
-        alt=""
-      />
-      <img
-        src="../../../assets/images/people/rafaella-mendes-diniz-et_78QkMMQs-unsplash.jpg"
-        alt=""
-        class="profile-image"
-      />
-      <h3 class="person-name">Students</h3>
-      <div class="icons">
-        <img
-          src="../../../assets/images/call.png"
-          class="cell"
-          alt=""
-          srcset=""
-        />
-        <img
-          src="../../../assets/images/email.png"
-          class="message"
-          alt=""
-          srcset=""
-        />
-      </div>
-    </div>
-    <div class="box box-2">
-      <img
-        src="../../../assets/images/more-menu.png"
-        class="more-menu"
-        alt=""
-      />
-      <img
-        src="../../../assets/images/people/rayul-_M6gy9oHgII-unsplash.jpg"
-        alt=""
-        class="profile-image"
-      />
-      <h3 class="person-name">Students</h3>
-      <div class="icons">
-        <img
-          src="../../../assets/images/call.png"
-          class="cell"
-          alt=""
-          srcset=""
-        />
-        <img
-          src="../../../assets/images/email.png"
-          class="message"
-          alt=""
-          srcset=""
-        />
-      </div>
-    </div>
-
-    <div class="box box-2">
-      <img
-        src="../../../assets/images/more-menu.png"
-        class="more-menu"
-        alt=""
-      />
-      <img
-        src="../../../assets/images/people/samsung-memory-DI2SR-IxkCg-unsplash.jpg"
-        alt=""
-        class="profile-image"
-      />
-      <h3 class="person-name">Students</h3>
-      <div class="icons">
-        <img
-          src="../../../assets/images/call.png"
-          class="cell"
-          alt=""
-          srcset=""
-        />
-        <img
-          src="../../../assets/images/email.png"
-          class="message"
-          alt=""
-          srcset=""
-        />
-      </div>
-    </div>
-
-    <div class="box box-2">
-      <img
-        src="../../../assets/images/more-menu.png"
-        class="more-menu"
-        alt=""
-      />
-      <img
-        src="../../../assets/images/people/samsung-memory-hjRC0i0oJxg-unsplash.jpg"
-        alt=""
-        class="profile-image"
-      />
-      <h3 class="person-name">Students</h3>
-      <div class="icons">
-        <img
-          src="../../../assets/images/call.png"
-          class="cell"
-          alt=""
-          srcset=""
-        />
-        <img
-          src="../../../assets/images/email.png"
-          class="message"
-          alt=""
-          srcset=""
-        />
-      </div>
-    </div>
-    <div class="box box-2">
-      <img
-        src="../../../assets/images/more-menu.png"
-        class="more-menu"
-        alt=""
-      />
-      <img
-        src="../../../assets/images/people/stefan-stefancik-QXevDflbl8A-unsplash.jpg"
-        alt=""
-        class="profile-image"
-      />
-      <h3 class="person-name">Students</h3>
-      <div class="icons">
-        <img
-          src="../../../assets/images/call.png"
-          class="cell"
-          alt=""
-          srcset=""
-        />
-        <img
-          src="../../../assets/images/email.png"
-          class="message"
-          alt=""
-          srcset=""
-        />
-      </div>
-    </div>
-
-    <div class="box box-2">
-      <img
-        src="../../../assets/images/more-menu.png"
-        class="more-menu"
-        alt=""
-      />
-      <img
-        src="../../../assets/images/people/toa-heftiba-O3ymvT7Wf9U-unsplash.jpg"
-        alt=""
-        class="profile-image"
-      />
-      <h3 class="person-name">Students</h3>
+      *ngIf="student.image"
+      [src]="student.image"
+      alt=""
+      class="profile-image"
+    />
+      <h3 class="person-name">{{student.name}}</h3>
       <div class="icons">
         <img
           src="../../../assets/images/call.png"
@@ -450,6 +45,48 @@
       </div>
     </div>
   </div>
+
+  <!-- <div
+    class="box-container"
+    *ngIf="
+      name === 'teachers'
+    "
+  >
+    <div class="box box-1"   *ngFor="let teacher of teachers">
+      <img
+        src="../../../assets/images/more-menu.png"
+        class="more-menu"
+        alt=""
+      />
+      <img
+        *ngIf="!student.image"
+        src="../../../assets/images/people/albert-dera-ILip77SbmOE-unsplash.jpg"
+        alt=""
+        class="profile-image"
+      />
+      <img
+      *ngIf="student.image"
+      [src]="student.image"
+      alt=""
+      class="profile-image"
+    />
+      <h3 class="person-name">{{student.name}}</h3>
+      <div class="icons">
+        <img
+          src="../../../assets/images/call.png"
+          class="cell"
+          alt=""
+          srcset=""
+        />
+        <img
+          src="../../../assets/images/email.png"
+          class="message"
+          alt=""
+          srcset=""
+        />
+      </div>
+    </div>
+  </div> -->
 
   <div
     class="box-container"

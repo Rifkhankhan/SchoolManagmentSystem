@@ -58,9 +58,10 @@ export class StudentService {
 			.pipe(
 				take(1),
 				map(resDate => {
+
 					const students = [];
 
-					for (let data of resDate) {
+					for (let data of resDate.users) {
 						students.push({
 							id: data._id,
 							name: data.name,
@@ -221,7 +222,79 @@ export class StudentService {
 			);
 	}
 
-	updateProfile() {}
+	updateProfile(
+		userId: string,
+		email: string,
+		name: string,
+		address: string,
+		gender: string,
+		mobile: string,
+    dob:string,
+    age:number,
+    courses:[],
+    grade:string,
+    parents:[]
+	) {
+		let updatedStudents: Student[];
+		let updateStudentData: Student;
+
+		const data = {
+			email,
+			name,
+			gender,
+			address,
+			mobile,
+			dob,
+			userId,
+			age,
+			courses,
+			grade,
+			parents
+		};
+
+		return this.http
+			.patch<any>('http://localhost:3000/api/student/applyProfile', data)
+			.pipe(
+				take(1),
+				switchMap(data => {
+					updateStudentData = data;
+					return this.getStudents;
+				}),
+				map(students => {
+					const updatedStudentIndex = students.findIndex(
+						p => p.id === userId
+					);
+
+					updatedStudents = [...students];
+
+					updatedStudents[updatedStudentIndex] = {
+						id: userId,
+						fees: updateStudentData.fees,
+						active: updateStudentData.active,
+						address: updateStudentData.address,
+						age: updateStudentData.age,
+						courses: updateStudentData.courses,
+						dob: updateStudentData.dob,
+						email: updateStudentData.email,
+						exams: updateStudentData.exams,
+						gender: updateStudentData.gender,
+						grade: updateStudentData.grade,
+						image: updateStudentData.image,
+						mobile: updateStudentData.mobile,
+						name: updateStudentData.name,
+						parents: updateStudentData.parents,
+						studentId: updateStudentData.studentId,
+						teachers: updateStudentData.teachers,
+						password: updateStudentData.password
+					};
+
+					return updatedStudents;
+				}),
+				tap(students => {
+					this._students.next(students);
+				})
+			);
+	}
 
 	uploadPhoto(userId: string, image: File) {
 		const formData = new FormData();
@@ -230,50 +303,51 @@ export class StudentService {
 		formData.append('image', image);
 
 		let updatedStudents: Student[];
-    let updateStudentData:Student;
+		let updateStudentData: Student;
 
-		return this.http.patch<any>(
-			'http://localhost:3000/api/student/applyExam',
-			formData
-		).pipe(
-      take(1),
-      switchMap(data=>{
-        updateStudentData = data.user;
-        return this.getStudents
-      }),
-      switchMap(students=>{
-        const updatedStudentIndex = students.findIndex(p => p.id === updateStudentData.id);
+		return this.http
+			.patch<any>('http://localhost:3000/api/student/applyExam', formData)
+			.pipe(
+				take(1),
+				switchMap(data => {
+					updateStudentData = data.user;
+					return this.getStudents;
+				}),
+				map(students => {
+					const updatedStudentIndex = students.findIndex(
+						p => p.id === updateStudentData.id
+					);
 
-				updatedStudents = [...students];
-				const oldStudent = updatedStudents[updatedStudentIndex];
+					updatedStudents = [...students];
+					const oldStudent = updatedStudents[updatedStudentIndex];
 
-				updatedStudents[updatedStudentIndex] = {
-					id: userId,
-					fees: oldStudent.fees,
-					active: oldStudent.active,
-					address: oldStudent.address,
-					age: oldStudent.age,
-					courses: oldStudent.courses,
-					dob: oldStudent.dob,
-					email: oldStudent.email,
-					exams: oldStudent.exams,
-					gender: oldStudent.gender,
-					grade: oldStudent.grade,
-					image: updateStudentData.image,
-					mobile: oldStudent.mobile,
-					name: oldStudent.name,
-					parents: oldStudent.parents,
-					studentId: oldStudent.studentId,
-					teachers: oldStudent.teachers,
-					password: oldStudent.password
-				};
+					updatedStudents[updatedStudentIndex] = {
+						id: userId,
+						fees: oldStudent.fees,
+						active: oldStudent.active,
+						address: oldStudent.address,
+						age: oldStudent.age,
+						courses: oldStudent.courses,
+						dob: oldStudent.dob,
+						email: oldStudent.email,
+						exams: oldStudent.exams,
+						gender: oldStudent.gender,
+						grade: oldStudent.grade,
+						image: updateStudentData.image,
+						mobile: oldStudent.mobile,
+						name: oldStudent.name,
+						parents: oldStudent.parents,
+						studentId: oldStudent.studentId,
+						teachers: oldStudent.teachers,
+						password: oldStudent.password
+					};
 
-        return updatedStudents
-      }),
-      tap(students=>{
-        this._students.next(students)
-      })
-    )
+					return updatedStudents;
+				}),
+				tap(students => {
+					this._students.next(students);
+				})
+			);
 	}
 
 	// cancelShop(shopId:string)

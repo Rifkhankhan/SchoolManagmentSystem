@@ -12,8 +12,8 @@ const userSchema = new Schema({
 	password: { type: String, required: true },
 	mobile: { type: String, required: true ,unique:true},
 	dob: { type: String, required: true },
-	image: { type: String,unique:true},
-    teacherId:{type:String,unique:true},
+	image: { type: String},
+    teacherId:{type:String},
     classes:{type:Array},
     courses:{type:Array},
 	exams:{type:Array},
@@ -21,6 +21,6 @@ const userSchema = new Schema({
 	salary:[{date:Date,money:Number}],
 	students:{type:Array}
 });
-userSchema.plugin(UniqueValidator); // to use unique value
+// userSchema.plugin(UniqueValidator); // to use unique value
 
 module.exports = mongoose.model('Teacher', userSchema);

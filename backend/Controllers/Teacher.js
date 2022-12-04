@@ -3,18 +3,19 @@ const HttpError = require("../models/http-error");
 const { validationResult } = require("express-validator");
 const bcrypt = require("bcryptjs");
 const Student = require("../models/Student");
-const uuid = require('uuid/v4');
+const uuid = require('uuid');
 const Course = require("../Models/Course");
 const Exam = require("../Models/Exam");
 const Salary = require('../Models/Salary');
-
+// new Date().toISOString()
 
 const createTeacher = async (req, res, next) => {
 
-    const {name,grade,gender,age,mobile,address,email,dob}  = req.body;
+    const {name,classes,gender,age,mobile,address,email,dob}  = req.body;
+  let newTeacher;
 
-	const newTeacher = new Teacher({
-		name:name,
+	 newTeacher = new Teacher({
+		    name:name,
         active:true,
         address:address,
         age:age,
@@ -22,18 +23,20 @@ const createTeacher = async (req, res, next) => {
         email:email,
         genter:gender,
         password:'123456',
-        grade:grade,
+        classes:classes,
         mobile:mobile,
-        teacherId:uuid()
+        teacherId:uuid.v1(),
+      
 	});
 	console.log(newTeacher);
 
 	try {
 		await newTeacher.save();
 	} catch (err) {
-		const error = new HttpError('Creating newTeacher failed,try again', 500);
-		return next(error);
+		// const error = new HttpError('Creating newTeacher failed,try again', 500);
+		return next(err);
 	}
+
 	res.json({ newTeacher: newTeacher.toObject({ getters: true }) });
 };
  

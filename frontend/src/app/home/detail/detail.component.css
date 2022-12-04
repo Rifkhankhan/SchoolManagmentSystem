@@ -41,6 +41,7 @@
 
 .box-container .box{
   width: 23%;
+  min-width: 250px;
   height: 300px;
 
   display: flex;
@@ -53,6 +54,10 @@
   border-radius: 5px;
   border: none;
   position: relative;
+}
+
+.box-container .box:not(.more-menu){
+  cursor: pointer;
 }
 
 .box:hover{

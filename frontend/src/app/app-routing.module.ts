@@ -1,3 +1,5 @@
+import { ExamDetailComponent } from './home/detail/exam-detail/exam-detail.component';
+import { StudentDetailComponent } from './home/detail/student-detail/student-detail.component';
 import { DetailComponent } from './home/detail/detail.component';
 import { CourseComponent } from './student-section/course/course.component';
 import { TeacherSectionComponent } from './teacher-section/teacher-section.component';
@@ -43,11 +45,29 @@ const routes: Routes = [
 			},
 			{
 				path: 'students',
-				component: StudentComponent
+        children:[
+          {
+            path:'',
+            component: StudentComponent
+          },
+          {
+            path:'details/:studentId',
+            component:StudentDetailComponent
+          }
+        ],
 			},
 			{
 				path: 'exams',
-				component: StudentComponent
+        children:[
+          {
+            path:'',
+            component: StudentComponent
+          },
+          {
+            path:'details/:examId',
+            component:ExamDetailComponent
+          }
+        ]
 			},
 			{
 				path: 'courses',

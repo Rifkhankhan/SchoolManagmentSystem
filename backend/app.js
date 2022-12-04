@@ -7,7 +7,7 @@ const app = express();
 
 // const authRouter = require('./route/auth');
 const studentRouter = require('./Routs/student');
-// const teacherRouter = require('./Routs/teacher');
+const teacherRouter = require('./Routs/teacher');
 // const examRouter = require('./Routs/exam');
 // const courseRouter = require('./Routs/course');
 // const paymentRouter = require('./Routs/payment');
@@ -16,7 +16,7 @@ const studentRouter = require('./Routs/student');
 //connect mongodb
 mongoose
 	.connect(
-		'mongodb+srv://Rifkhan:schoolmanagementsystem@schoolmanagementsystem.ph5jg5d.mongodb.net/?retryWrites=true&w=majority'
+		'mongodb+srv://Rifkhan:Rifkhan123@cluster0.npeeomq.mongodb.net/?retryWrites=true&w=majority'
 	)
 	.then(() => {
 		console.log('connected to Database');
@@ -50,7 +50,7 @@ app.use((req, res, next) => {
 
 // app.use('/api/auth', authRouter);
 app.use('/api/student', studentRouter);
-// app.use('/api/teacher', teacherRouter);
+app.use('/api/teacher', teacherRouter);
 // app.use('/api/exam', examRouter);
 // app.use('/api/course', courseRouter);
 // app.use('/api/payment', paymentRouter);
@@ -67,7 +67,8 @@ app.use((error, req, res, next) => {
 		return next(error);
 	}
 	res
-		.status(error.code || 500)
+		.status(error.status || 500)
+		// .status(error.code || 500)
 		.json({ message: error.message || 'An Unknown Error Occurred!' });
 });
 

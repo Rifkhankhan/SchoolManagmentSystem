@@ -14,15 +14,14 @@ const userSchema = new Schema({
 	dob: { type: String, required: true },
 	active: { type: Boolean, required: true },
 	grade: { type: String, required: true },
-	studentId: { type: String, unique: true, required: true },
-	image: { type: String},
-
+	studentId: { type: String,  required: true },
+	image: { type: String },
 	courses: { type: Array },
 	exams: { type: Array },
 	fees: [{ date: Date, money: Number, event: String, eventname: String }],
 	teachers: { type: Array },
 	parents: { type: Array }
 });
-userSchema.plugin(UniqueValidator); 
+// userSchema.plugin(UniqueValidator);
 
 module.exports = mongoose.model('Student', userSchema);

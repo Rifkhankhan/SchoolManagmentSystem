@@ -9,8 +9,9 @@ const Exam = require("../Models/Exam");
 const createStudent = async (req, res, next) => {
 
   const {name,grade,gender,age,mobile,address,email,dob}  = req.body;
+  let newStudent
 
-	const newStudent = new Student({
+	 newStudent = new Student({
 		    name:name,
         gender:gender,
         address:address,
@@ -22,7 +23,7 @@ const createStudent = async (req, res, next) => {
         active:true,
         grade:grade,
         studentId:uuid.v1(),
-        image:''
+        
 	});
   
 	try {
@@ -100,7 +101,7 @@ const updateProfile = async (req, res, next) => {
     throw new HttpError("Invalid inputs passed, please check your data.", 422);
   }
 
-  const { email,name,gender,address,mobile,dob,id,image,age,courses,grade,parents } = req.body;
+  const { email,name,gender,address,mobile,dob,userId,age,courses,grade,parents } = req.body;
 
   let user;
 
@@ -185,7 +186,11 @@ const getStudents = async (req, res, next) => {
 		res.status(201).json({ message: 'There is no ususerser ' });
 	} else {
     console.log(users);
-		return res.status(201).json(users.toObject({ getters: true }));
+		return res.status(200).json({
+			users: users.map((user) =>
+				user.toObject({ getters: true })
+			)
+		});
 	}
 };
 
